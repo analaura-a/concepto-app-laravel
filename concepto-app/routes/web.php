@@ -16,3 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+/*----------------------------
+ Sitio web
+----------------------------*/
+
+Route::get('/', );
+
+
+/*----------------------------
+Panel de administración
+----------------------------*/
