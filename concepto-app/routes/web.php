@@ -13,18 +13,37 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 /*----------------------------
  Sitio web
 ----------------------------*/
 
-Route::get('/', );
+Route::get('/', [\App\Http\Controllers\WebsiteController::class, 'index']);
+
+// Route::get('/blog', );
+
+// Route::get('/blog/{id}', );
+
 
 
 /*----------------------------
 Panel de administración
 ----------------------------*/
+// Route::get('/admin/iniciar-sesion', );
+
+// Route::get('/admin/dashboard', );
+
+// Route::get('/admin/blog', );
+
+// Route::get('/admin/blog/nueva-entrada', );
+
+// Route::get('/admin/blog/editar-entrada', );
+
+// Route::get('/admin/blog/eliminar-entrada', );
+
+
+// Route::get('/admin/author', );
