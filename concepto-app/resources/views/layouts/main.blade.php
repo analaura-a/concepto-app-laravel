@@ -31,12 +31,12 @@
         <nav>
             <ul id="primary-navigation" data-visible="false">
                 <li>
-                    <a href="index.html" class="navigation-anchor">
+                    <a href="/" class="navigation-anchor">
                         <p>Home</p>
                     </a>
                 </li>
                 <li>
-                    <a href="index.html#seccionCategorias" class="navigation-anchor">
+                    <a href="#" class="navigation-anchor">
                         <p>Explorar</p>
                     </a>
                 </li>

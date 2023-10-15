@@ -173,6 +173,10 @@ body {
     text-align: center;
 }
 
+.max-600 {
+    max-width: 650px;
+}
+
 .nuevo {
     font-family: var(--switzer-font);
     font-weight: var(--switzer-medium);
@@ -356,7 +360,7 @@ body {
     width: 50px;
     height: 1px;
     background: var(--color-subtitle-line);
-    left: 0;
+    left: 20px;
     top: 50%;
     position: absolute;
 }
@@ -367,7 +371,7 @@ body {
     width: 50px;
     height: 1px;
     background: var(--color-subtitle-line);
-    right: 0;
+    right: 20px;
     top: 50%;
     position: absolute;
 }
@@ -779,7 +783,7 @@ body {
     font-weight: var(--general-regular);
     font-size: var(--font-16px);
     color: var(--color-gray-800);
-    line-height: 135.5%;
+    line-height: 150%;
 }
 
 @media only screen and (min-width: 992px) {
