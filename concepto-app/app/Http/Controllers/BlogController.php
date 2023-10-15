@@ -25,4 +25,13 @@ class BlogController extends Controller
             'post' => Blogpost::findOrFail($id),
         ]);
     }
+
+    public function admin()
+    {
+        $posts = Blogpost::all();
+
+        return view('admin/bloglist', [
+            'posts' => $posts,
+        ]);
+    }
 }

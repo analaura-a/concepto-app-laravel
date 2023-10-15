@@ -11,6 +11,9 @@
     <link href="https://api.fontshare.com/v2/css?f[]=general-sans@500,300,600,400,700&display=swap" rel="stylesheet">
     <link href="https://api.fontshare.com/v2/css?f[]=switzer@600,800,900,700,400,300,500&display=swap" rel="stylesheet">
 
+    <!--Bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
     <!--Custom CSS-->
     <link rel="stylesheet" href="<?= url('css/styles.css'); ?>">
 
@@ -36,7 +39,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="" class="navigation-anchor">
+                    <a href="<?= route('admin.blog'); ?>" class="navigation-anchor">
                         <p>Blog</p>
                     </a>
                 </li>

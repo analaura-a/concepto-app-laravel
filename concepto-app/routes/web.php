@@ -39,7 +39,7 @@ Route::get('/admin/iniciar-sesion', [\App\Http\Controllers\AuthController::class
 
 Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.home');
 
-// Route::get('/admin/blog', );
+Route::get('/admin/blog', [\App\Http\Controllers\BlogController::class, 'admin'])->name('admin.blog');
 
 // Route::get('/admin/blog/nueva-entrada', );
 

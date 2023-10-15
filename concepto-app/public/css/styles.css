@@ -56,6 +56,10 @@ a {
     text-decoration: none;
 }
 
+p {
+    margin: 0;
+}
+
 
 
 /* ESTILOS GENERALES */
@@ -672,6 +676,10 @@ body {
 .main-cta:hover {
     background-color: var(--color-primary-600);
     box-shadow: 0px 4px 40px 8px hsla(232, 90%, 72%, 0.39);
+}
+
+.main-cta-larger {
+    padding: 16px 22px 16px 22px;
 }
 
 .hero-section-cta {
@@ -1898,6 +1906,11 @@ footer {
     height: 400px;
     background-color: var(--color-background-600);
     border-radius: 2rem;
+    transition: all 240ms ease-out;
+}
+
+.admin-shortcut:hover {
+    background-color: var(--color-primary-300);
 }
 
 .admin-shortcut p {
@@ -1910,6 +1923,21 @@ footer {
     text-align: center;
 }
 
+.title-with-button {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+@media only screen and (min-width: 992px) {
+
+    .title-with-button {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+}
 
 
 /* NOTIFICATION */
