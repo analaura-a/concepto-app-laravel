@@ -19,7 +19,7 @@
 
         @foreach($posts as $post)
         <li class="course-card">   
-           <a href="#">
+           <a href="<?= route('web.blog.post', ['id' => $post->id]) ?>">
                 <div class="card-img">
                     <img src="{{ $post->cover }}" alt="{{ $post->title }}">
                 </div>

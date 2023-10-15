@@ -22,12 +22,13 @@ use Illuminate\Support\Facades\Route;
  Sitio web
 ----------------------------*/
 
-Route::get('/', [\App\Http\Controllers\WebsiteController::class, 'index']);
+Route::get('/', [\App\Http\Controllers\WebsiteController::class, 'index'])->name('web.home');
 
-Route::get('/blog', [\App\Http\Controllers\BlogController::class, 'list']);
+Route::get('/blog', [\App\Http\Controllers\BlogController::class, 'list'])->name('web.blog');
 
 Route::get('/blog/{id}', [\App\Http\Controllers\BlogController::class, 'post'])
-    ->whereNumber('id');
+    ->whereNumber('id')
+    ->name('web.blog.post');
 
 
 

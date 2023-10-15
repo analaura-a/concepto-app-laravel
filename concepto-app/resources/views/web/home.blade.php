@@ -20,7 +20,7 @@
             hecho especialmente para que puedas profundizar
             tus conocimientos y destacar en el mercado laboral actual.</p>
 
-        <a href="#" class="main-cta hero-section-cta">
+        <a href="<?= route('web.home'); ?>" class="main-cta hero-section-cta">
             <p>Explorar cursos</p>
 
             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 48 48" fill="none">
@@ -150,7 +150,7 @@
     <p class="paragraph mb-8 text-center max-600 m-0-auto mb-40">
         En lugar de ofrecerte un tutorial en particular, te ofrecemos el paquete completo: nuestro inmenso catálogo de cursos y tutoriales online, ¡para que puedas potenciar tu perfil profesional a tu propio ritmo!  
     </p>
-    <a href="#" class="main-cta m-0-auto">
+    <a href="<?= route('web.home'); ?>" class="main-cta m-0-auto">
         <p>Explorar planes</p>
 
         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 48 48" fill="none">
@@ -228,7 +228,7 @@
         </li>  
     </ul>
 
-    <a href="#" class="main-cta m-0-auto">
+    <a href="<?= route('web.home'); ?>" class="main-cta m-0-auto">
         <p>Accedé al catálogo completo</p>
 
         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 48 48" fill="none">
@@ -243,7 +243,7 @@
     <p class="subtitle subtitle-center-lines text-center">Nuestro blog</p>
     <h2 class="h1 h1-bigger text-center max-600 m-0-auto mt-8 mb-24">Aprendé con los mejores tips de nuestra comunidad</h2>
     <p class="paragraph mb-8 text-center max-600 m-0-auto mb-40">Desde nuestros tutoriales hasta nuestro blog, en concepto estamos comprometidos con la idea de crear continuamente contenido de calidad para ayudarte a crecer profesionalmente.</p>
-    <a href="#" class="main-cta m-0-auto">
+    <a href="<?= route('web.blog'); ?>" class="main-cta m-0-auto">
         <p>Ir al blog</p>
 
         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 48 48" fill="none">
