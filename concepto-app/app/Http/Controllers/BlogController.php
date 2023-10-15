@@ -17,6 +17,12 @@ class BlogController extends Controller
         return view('web/bloglist', [
             'posts' => $posts,
         ]);
+    }
 
+    public function post(int $id)
+    {
+        return view('web/blogpost', [
+            'post' => Blogpost::findOrFail($id),
+        ]);
     }
 }
