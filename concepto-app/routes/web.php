@@ -35,7 +35,7 @@ Route::get('/blog/{id}', [\App\Http\Controllers\BlogController::class, 'post'])
 /*----------------------------
 Panel de administración
 ----------------------------*/
-// Route::get('/admin/iniciar-sesion', );
+Route::get('/admin/iniciar-sesion', [\App\Http\Controllers\AuthController::class, 'loginForm'])->name('auth.login.form');
 
 // Route::get('/admin/dashboard', );
 
