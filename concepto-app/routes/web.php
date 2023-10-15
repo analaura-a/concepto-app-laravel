@@ -37,7 +37,7 @@ Panel de administración
 ----------------------------*/
 Route::get('/admin/iniciar-sesion', [\App\Http\Controllers\AuthController::class, 'loginForm'])->name('auth.login.form');
 
-// Route::get('/admin/dashboard', );
+Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.home');
 
 // Route::get('/admin/blog', );
 

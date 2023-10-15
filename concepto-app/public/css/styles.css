@@ -1890,8 +1890,25 @@ footer {
 
 
 
-/* LOGIN */
-/* .login {} */
+/* ADMIN */
+.admin-shortcut {
+    display: grid;
+    place-items: center;
+    max-width: 400px;
+    height: 400px;
+    background-color: var(--color-background-600);
+    border-radius: 2rem;
+}
+
+.admin-shortcut p {
+    width: 80%;
+    font-family: var(--switzer-font);
+    font-size: var(--font-32px);
+    font-weight: var(--switzer-semibold);
+    color: var(--color-gray-1000);
+    line-height: 120%;
+    text-align: center;
+}
 
 
 
