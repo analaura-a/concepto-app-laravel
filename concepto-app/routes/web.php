@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\WebsiteController::class, 'index']);
 
-// Route::get('/blog', );
+Route::get('/blog', [\App\Http\Controllers\BlogController::class, 'list']);
 
 // Route::get('/blog/{id}', );
 
