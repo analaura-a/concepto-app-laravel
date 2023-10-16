@@ -66,7 +66,7 @@ use Illuminate\Support\ViewErrorBag;
                 @enderror
             </div>
 
-            <input type="submit" value="Publicar entrada" class="main-cta mt-32">
+            <input type="submit" value="Actualizar entrada" class="main-cta mt-32">
 
         </form>
 

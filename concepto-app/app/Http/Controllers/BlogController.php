@@ -13,8 +13,6 @@ class BlogController extends Controller
 
         $posts = Blogpost::all();
 
-        // Debugbar::info($posts);
-
         return view('web/bloglist', [
             'posts' => $posts,
         ]);
@@ -101,6 +99,12 @@ class BlogController extends Controller
     public function deleteProcess(int $id)
     {
         $post = Blogpost::findOrFail($id);
+
+        $exists = Storage::disk('public')->exists($post->cover);
+
+        if ($exists) {
+            Storage::disk('public')->delete($post->cover);
+        }
 
         $post->delete();
 
