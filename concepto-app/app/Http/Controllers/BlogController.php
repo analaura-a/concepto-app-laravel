@@ -64,6 +64,7 @@ class BlogController extends Controller
     {
         return view('admin/blog/edit', [
             'post' => Blogpost::findOrFail($id),
+            'authors' => Author::all()
         ]);
     }
 
@@ -74,7 +75,7 @@ class BlogController extends Controller
 
         $request->validate(Blogpost::CREATE_RULES, Blogpost::CREATE_MESSAGES);
 
-        $data = $request->only(['category', 'title', 'summary', 'cover', 'content']);
+        $data = $request->only(['category', 'title', 'summary', 'cover', 'content', 'author_id']);
 
         $exists = Storage::disk('public')->exists($post->cover);
 

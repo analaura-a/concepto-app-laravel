@@ -41,7 +41,6 @@ use Illuminate\Support\ViewErrorBag;
                 @enderror
             </div>
 
-            
             <div class="form-input">
                 <label for="summary">Breve resumen<span class="primary-color-text">*</span></label>
                 <textarea id="summary" name="summary" rows="5" placeholder="Esta publicación habla de..." @error('summary') aria-describedby="error-summary" @enderror>{{ old('summary', $post->summary) }}</textarea>
@@ -63,6 +62,26 @@ use Illuminate\Support\ViewErrorBag;
                 <textarea id="content" name="content" rows="20" placeholder="Escribe aquí el contenido de la publicación." @error('content') aria-describedby="error-content" @enderror>{{ old('content', $post->content) }}</textarea>
                 @error('content')
                 <p class="text-danger" id="error-content">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <div class="form-input">
+                <label for="author_id">Autor/a<span class="primary-color-text">*</span></label>
+                <select
+                id="author_id"
+                name="author_id"
+                @error('author_id') aria-describedby="error-author_id" @enderror>
+
+                <option value="">Seleccioná el/la autor/a</option>
+                    @foreach($authors as $author)
+                        <option value="{{ $author->id }}" @selected($author->id == old('author_id', $post->author_id))>
+                            {{ $author->name }}
+                        </option>
+                    @endforeach
+                </select>
+               
+                @error('author_id')
+                    <p class="text-danger" id="error-author_id">{{ $message }}</p>
                 @enderror
             </div>
 
