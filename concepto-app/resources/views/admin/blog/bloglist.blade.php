@@ -8,7 +8,7 @@
 
    <div class="title-with-button mb-64">
        <h1 class="h1 h1-bigger max-600">Listado de entradas del blog</h1>
-       <a href="" class="main-cta main-cta-larger">
+       <a href="<?= route('admin.blog.create.form'); ?>" class="main-cta main-cta-larger">
             <p>Publicar una nueva entrada</p>
        </a>
    </div>

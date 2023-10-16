@@ -1715,7 +1715,8 @@ footer {
     margin-bottom: 0.5rem;
 }
 
-.form-input>input {
+.form-input>input,
+.form-input>textarea {
     font-weight: var(--general-regular);
     font-size: var(--font-16px);
     color: var(--color-gray-1000);
@@ -1727,6 +1728,7 @@ footer {
     padding: 14px 24px;
 
     transition: all 240ms ease-out;
+    resize: none;
 }
 
 .form-input>input:focus {

@@ -41,7 +41,9 @@ Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->n
 
 Route::get('/admin/blog', [\App\Http\Controllers\BlogController::class, 'admin'])->name('admin.blog');
 
-// Route::get('/admin/blog/nueva-entrada', );
+Route::get('/admin/blog/nueva-entrada', [\App\Http\Controllers\BlogController::class, 'createForm'])->name('admin.blog.create.form');
+
+Route::post('/admin/blog/nueva-entrada', [\App\Http\Controllers\BlogController::class, 'createProcess'])->name('admin.blog.create.process');
 
 // Route::get('/admin/blog/editar-entrada', );
 

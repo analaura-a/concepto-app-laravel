@@ -30,8 +30,25 @@ class BlogController extends Controller
     {
         $posts = Blogpost::all();
 
-        return view('admin/bloglist', [
+        return view('admin/blog/bloglist', [
             'posts' => $posts,
         ]);
+    }
+
+    public function createForm()
+    {
+        return view('admin/blog/create');
+    }
+
+    public function createProcess(Request $request)
+    {
+        $request->validate(Blogpost::CREATE_RULES, Blogpost::CREATE_MESSAGES);
+
+        $data = $request->only(['category', 'title', 'summary', 'cover', 'content']);
+
+        Blogpost::create($data);
+
+        return redirect()
+            ->route('admin.blog');
     }
 }
