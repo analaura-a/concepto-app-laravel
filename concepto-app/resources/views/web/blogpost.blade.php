@@ -1,3 +1,7 @@
+<?php 
+    use Illuminate\Support\Str; 
+?>
+
 @extends('layouts.main')
 
 @section('title', $post->title)
@@ -12,7 +16,11 @@
     <p class="text-center paragraph-color-text bold mb-64">Por Ana Laura Almirón</p>
 
     <div class="blog-img-container mb-64">
-        <img src="{{ $post->cover }}" alt="{{ $post->title }}" class="blog-img">
+            @if(Str::of($post->cover)->startsWith('https'))
+                <img src="{{ $post->cover }}" alt="{{ $post->title }}" class="blog-img">
+            @else
+                <img src="{{ asset('storage/' . $post->cover) }}" alt="{{ $post->title }}" class="blog-img">
+            @endif
     </div>
 
     <p class="blog-content paragraph m-0-auto">{{ $post->content }}</p>

@@ -1,3 +1,7 @@
+<?php 
+    use Illuminate\Support\Str; 
+?>
+
 @extends('layouts.main')
 
 @section('title', 'Concepto — Blog')
@@ -21,7 +25,11 @@
         <li class="course-card">   
            <a href="<?= route('web.blog.post', ['id' => $post->id]) ?>">
                 <div class="card-img">
-                    <img src="{{ $post->cover }}" alt="{{ $post->title }}">
+                    @if(Str::of($post->cover)->startsWith('https'))
+                        <img src="{{ $post->cover }}" alt="{{ $post->title }}">
+                    @else
+                        <img src="{{ asset('storage/' . $post->cover) }}" alt="{{ $post->title }}">
+                    @endif
                 </div>
                 <div class="card-content">
                     <p class="card-content-category mb-8">{{ $post->category }}</p>

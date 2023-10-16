@@ -35,7 +35,7 @@ class BlogpostSeeder extends Seeder
                 'category' => 'Skills',
                 'title' => 'Qué talentos buscan las empresas (y dónde adquirirlos)',
                 'summary' => 'Nuestra amplia oferta de formación se encuentra orientada al desarrollo profesional en tecnología y diseño, buscando potenciar las habilidades técnicas de personas de todas partes del mundo. Conocé los detalles.',
-                'cover' => 'https://www.alkemy.org/wp-content/uploads/2022/04/como-conseguir-el-primer-empleo-en-it.jpg',
+                'cover' => 'https://coxblue.com/wp-content/uploads/2019/02/technology-company.jpg',
                 'content' => 'No hay dudas que el sector IT se transformó en uno de los más pujantes y dinámicos del mercado. El desarrollo de software y aplicaciones mobile, entre otras aptitudes, son cada vez más requeridas por las empresas, que brindan variados beneficios a la hora de captar talentos. El sector de la educación no es indistinto a esto: hay una creciente oferta educativa -que evoluciona minuto a minuto - que responde a esto. 
                 En concepto, buscamos ofrecer capacitaciones a través de cursos cortos y tutoriales que permitan desarrollar las nuevas capacidades y habilidades digitales más demandadas por el mercado actual. 
                 Entre las especialidades que más demanda tienen, están Data Science,  DevOps, Programación: Java / .NET / Python / Node, Diseño de Experiencia de Usuarios, Product Owner / Scrum Master y Testing QA, entre otras. Más de 10.000 personas estudian en concepto cada año. Muchas de ellas siguen cursando debido a la alta calidad de los profesores, grandes referentes de la industria, y a los contenidos dictados por cada uno de ello.',

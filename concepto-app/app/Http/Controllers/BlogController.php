@@ -46,6 +46,10 @@ class BlogController extends Controller
 
         $data = $request->only(['category', 'title', 'summary', 'cover', 'content']);
 
+        if($request->hasFile('cover')) {
+            $data['cover'] = $request->file('cover')->store('covers');
+        }
+
         Blogpost::create($data);
 
         return redirect()
@@ -68,6 +72,8 @@ class BlogController extends Controller
         $request->validate(Blogpost::CREATE_RULES, Blogpost::CREATE_MESSAGES);
 
         $data = $request->only(['category', 'title', 'summary', 'cover', 'content']);
+
+        // Storage::delete('file.jpg');
 
         $post->update($data);
 
