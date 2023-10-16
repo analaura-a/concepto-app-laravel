@@ -45,7 +45,9 @@ Route::get('/admin/blog/nueva-entrada', [\App\Http\Controllers\BlogController::c
 
 Route::post('/admin/blog/nueva-entrada', [\App\Http\Controllers\BlogController::class, 'createProcess'])->name('admin.blog.create.process');
 
-// Route::get('/admin/blog/editar-entrada', );
+Route::get('/admin/blog/{id}/editar-entrada', [\App\Http\Controllers\BlogController::class, 'editForm'])->name('admin.blog.edit.form');
+
+Route::post('/admin/blog/{id}/editar-entrada', [\App\Http\Controllers\BlogController::class, 'editProcess'])->name('admin.blog.edit.process');
 
 // Route::get('/admin/blog/eliminar-entrada', );
 

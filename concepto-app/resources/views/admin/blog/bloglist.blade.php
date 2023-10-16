@@ -34,7 +34,7 @@
                     <td>Ana Laura Almirón</td>    
                     <td>
                         <a href="<?= route('web.blog.post', ['id' => $post->id]) ?>" class="btn btn-primary">Ver</a>
-                        <a href="" class="btn btn-secondary">Editar</a>
+                        <a href="<?= route('admin.blog.edit.form', ['id' => $post->id]) ?>" class="btn btn-secondary">Editar</a>
                         <a href="" class="btn btn-danger">Eliminar</a>
                     </td>
                 </tr>

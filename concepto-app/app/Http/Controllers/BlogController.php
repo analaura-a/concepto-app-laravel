@@ -52,4 +52,27 @@ class BlogController extends Controller
             ->route('admin.blog')
             ->with('status.message', 'El post "' . e($data['title']) . '" se publicó con éxito.');
     }
+
+    public function editForm(int $id)
+    {
+        return view('admin/blog/edit', [
+            'post' => Blogpost::findOrFail($id),
+        ]);
+    }
+
+    public function editProcess(int $id, Request $request)
+    {
+
+        $post = Blogpost::findOrFail($id);
+
+        $request->validate(Blogpost::CREATE_RULES, Blogpost::CREATE_MESSAGES);
+
+        $data = $request->only(['category', 'title', 'summary', 'cover', 'content']);
+
+        $post->update($data);
+
+        return redirect()
+            ->route('admin.blog')
+            ->with('status.message', 'El post "' . e($data['title']) . '" se editó con éxito.');
+    }
 }
