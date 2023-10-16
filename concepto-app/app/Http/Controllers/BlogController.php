@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blogpost;
+use App\Models\Author;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
@@ -37,14 +38,16 @@ class BlogController extends Controller
 
     public function createForm()
     {
-        return view('admin/blog/create');
+        return view('admin/blog/create', [
+            'authors' => Author::all()
+        ]);
     }
 
     public function createProcess(Request $request)
     {
         $request->validate(Blogpost::CREATE_RULES, Blogpost::CREATE_MESSAGES);
 
-        $data = $request->only(['category', 'title', 'summary', 'cover', 'content']);
+        $data = $request->only(['category', 'title', 'summary', 'cover', 'content', 'author_id']);
 
         if ($request->hasFile('cover')) {
             $data['cover'] = $request->file('cover')->store('covers');

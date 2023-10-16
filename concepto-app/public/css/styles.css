@@ -1716,7 +1716,8 @@ footer {
 }
 
 .form-input>input,
-.form-input>textarea {
+.form-input>textarea,
+.form-input>select {
     font-weight: var(--general-regular);
     font-size: var(--font-16px);
     color: var(--color-gray-1000);

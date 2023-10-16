@@ -66,6 +66,26 @@ use Illuminate\Support\ViewErrorBag;
                 @enderror
             </div>
 
+            <div class="form-input">
+                <label for="author_id">Autor/a<span class="primary-color-text">*</span></label>
+                <select
+                id="author_id"
+                name="author_id"
+                @error('author_id') aria-describedby="error-author_id" @enderror>
+
+                <option value="">Seleccioná el/la autor/a</option>
+                    @foreach($authors as $author)
+                        <option value="{{ $author->id }}" @selected($author->id == old('author_id'))>
+                            {{ $author->name }}
+                        </option>
+                    @endforeach
+                </select>
+               
+                @error('author_id')
+                    <p class="text-danger" id="error-author_id">{{ $message }}</p>
+                @enderror
+            </div>
+
             <input type="submit" value="Publicar entrada" class="main-cta mt-32">
 
         </form>

@@ -10,14 +10,15 @@ class Blogpost extends Model
 {
     // use HasFactory;
 
-    protected $fillable = ['category', 'title', 'summary', 'cover', 'content'];
+    protected $fillable = ['category', 'title', 'summary', 'cover', 'content', 'author_id'];
 
     public const CREATE_RULES = [
         'category' => 'required|min:3',
         'title' => 'required|min:2',
         'summary' => 'required',
         'cover' => 'required',
-        'content' => 'required'
+        'content' => 'required',
+        'author_id' => 'required'
     ];
 
     public const CREATE_MESSAGES = [
@@ -28,6 +29,7 @@ class Blogpost extends Model
         'summary.required' => 'El resumen no puede estar vacío.',
         'cover.required' => 'La portada no puede estar vacía.',
         'content.required' => 'El contenido de la publicación no puede estar vacío.',
+        'author_id.required' => 'Es necesario que elijas a un/a autor/a.',
     ];
 
     public function author(): BelongsTo
