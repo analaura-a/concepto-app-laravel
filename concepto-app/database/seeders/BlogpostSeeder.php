@@ -17,6 +17,7 @@ class BlogpostSeeder extends Seeder
         DB::table('blogposts')->insert([
             [
                 'id' => 1,
+                'author_id' => 1,
                 'category' => 'Primer trabajo',
                 'title' => '¿Cómo conseguir tu primer trabajo en IT?',
                 'summary' => 'Son muchas las personas que están queriendo conseguir su primer empleo IT. Y es que la industria de la tecnología está requiriendo, cada vez más, profesionales que estén listos para trabajar.',
@@ -32,6 +33,7 @@ class BlogpostSeeder extends Seeder
             ],
             [
                 'id' => 2,
+                'author_id' => 3,
                 'category' => 'Skills',
                 'title' => 'Qué talentos buscan las empresas (y dónde adquirirlos)',
                 'summary' => 'Nuestra amplia oferta de formación se encuentra orientada al desarrollo profesional en tecnología y diseño, buscando potenciar las habilidades técnicas de personas de todas partes del mundo. Conocé los detalles.',
