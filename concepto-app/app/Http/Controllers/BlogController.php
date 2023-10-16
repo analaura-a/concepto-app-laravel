@@ -11,7 +11,7 @@ class BlogController extends Controller
     public function list()
     {
 
-        $posts = Blogpost::all();
+        $posts = Blogpost::with('author')->get();
 
         return view('web/bloglist', [
             'posts' => $posts,
@@ -27,7 +27,8 @@ class BlogController extends Controller
 
     public function admin()
     {
-        $posts = Blogpost::all();
+
+        $posts = Blogpost::with('author')->get();
 
         return view('admin/blog/bloglist', [
             'posts' => $posts,

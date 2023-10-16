@@ -31,7 +31,7 @@
                 <tr>
                     <td>{{ $post->id }}</td>
                     <td>{{ $post->title }}</td>    
-                    <td>Ana Laura Almirón</td>    
+                    <td>{{ $post->author->name }}</td>    
                     <td>
                         <a href="<?= route('web.blog.post', ['id' => $post->id]) ?>" class="btn btn-primary">Ver</a>
                         <a href="<?= route('admin.blog.edit.form', ['id' => $post->id]) ?>" class="btn btn-secondary">Editar</a>

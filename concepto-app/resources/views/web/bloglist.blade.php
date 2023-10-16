@@ -34,7 +34,7 @@
                 <div class="card-content">
                     <p class="card-content-category mb-8">{{ $post->category }}</p>
                     <h3 class="h3 mb-4">{{ $post->title }}</h3>
-                    <p class="mb-8 paragraph-color-text bold">Por Ana Laura Almirón</p>
+                    <p class="mb-8 paragraph-color-text bold">Por {{ $post->author->name }}</p>
                     <p class="card-content-paragraph mb-12">{{ $post->summary }}</p>
                 </div>
            </a>

@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Blogpost extends Model
 {
-    use HasFactory;
+    // use HasFactory;
 
     protected $fillable = ['category', 'title', 'summary', 'cover', 'content'];
 
@@ -28,4 +29,9 @@ class Blogpost extends Model
         'cover.required' => 'La portada no puede estar vacía.',
         'content.required' => 'El contenido de la publicación no puede estar vacío.',
     ];
+
+    public function author(): BelongsTo
+    {
+        return $this->belongsTo(Author::class, 'author_id', 'id');
+    }
 }
