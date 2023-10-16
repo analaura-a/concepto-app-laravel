@@ -57,6 +57,13 @@
 
     <main>
         @yield('content')
+
+        @if(\Session::has('status.message'))
+            <div class="notification">
+                <p class="paragraph">{{ \Session::get('status.message') }}</p>
+            </div>
+        @endif
+
     </main>
 
     <footer class="container">

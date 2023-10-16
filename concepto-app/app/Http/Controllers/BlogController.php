@@ -49,6 +49,7 @@ class BlogController extends Controller
         Blogpost::create($data);
 
         return redirect()
-            ->route('admin.blog');
+            ->route('admin.blog')
+            ->with('status.message', 'El post "' . e($data['title']) . '" se publicó con éxito.');
     }
 }
