@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blogpost;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -46,7 +47,7 @@ class BlogController extends Controller
 
         $data = $request->only(['category', 'title', 'summary', 'cover', 'content']);
 
-        if($request->hasFile('cover')) {
+        if ($request->hasFile('cover')) {
             $data['cover'] = $request->file('cover')->store('covers');
         }
 
@@ -73,7 +74,15 @@ class BlogController extends Controller
 
         $data = $request->only(['category', 'title', 'summary', 'cover', 'content']);
 
-        // Storage::delete('file.jpg');
+        $exists = Storage::disk('public')->exists($post->cover);
+
+        if ($exists) {
+            Storage::disk('public')->delete($post->cover);
+        }
+
+        if ($request->hasFile('cover')) {
+            $data['cover'] = $request->file('cover')->store('covers');
+        }
 
         $post->update($data);
 
@@ -99,5 +108,4 @@ class BlogController extends Controller
             ->route('admin.blog')
             ->with('status.message', 'El post "' . e($post['title']) . '" se eliminó con éxito.');
     }
-    
 }

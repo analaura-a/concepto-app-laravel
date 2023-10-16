@@ -22,7 +22,7 @@ use Illuminate\Support\ViewErrorBag;
         <p class="text-danger mb-3">Hay errores en los datos del formulario. ¡Por favor, revisalos para corregirlos!</p>
         @endif
 
-        <form action="<?= route('admin.blog.edit.process', ['id' => $post->id]); ?>" method="post" id="form-checkout">
+        <form action="<?= route('admin.blog.edit.process', ['id' => $post->id]); ?>" method="post" enctype="multipart/form-data" id="form-checkout">
             @csrf
 
             <div class="form-input">
