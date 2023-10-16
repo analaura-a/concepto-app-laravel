@@ -49,7 +49,9 @@ Route::get('/admin/blog/{id}/editar-entrada', [\App\Http\Controllers\BlogControl
 
 Route::post('/admin/blog/{id}/editar-entrada', [\App\Http\Controllers\BlogController::class, 'editProcess'])->name('admin.blog.edit.process');
 
-// Route::get('/admin/blog/eliminar-entrada', );
+Route::get('/admin/blog/{id}/eliminar-entrada', [\App\Http\Controllers\BlogController::class, 'deleteForm'])->name('admin.blog.delete.form');
+
+Route::post('/admin/blog/{id}/eliminar-entrada', [\App\Http\Controllers\BlogController::class, 'deleteProcess'])->name('admin.blog.delete.process');
 
 
 // Route::get('/admin/author', );

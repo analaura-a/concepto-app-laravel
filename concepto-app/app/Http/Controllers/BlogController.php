@@ -75,4 +75,23 @@ class BlogController extends Controller
             ->route('admin.blog')
             ->with('status.message', 'El post "' . e($data['title']) . '" se editó con éxito.');
     }
+
+    public function deleteForm(int $id)
+    {
+        return view('admin/blog/delete', [
+            'post' => Blogpost::findOrFail($id),
+        ]);
+    }
+
+    public function deleteProcess(int $id)
+    {
+        $post = Blogpost::findOrFail($id);
+
+        $post->delete();
+
+        return redirect()
+            ->route('admin.blog')
+            ->with('status.message', 'El post "' . e($post['title']) . '" se eliminó con éxito.');
+    }
+    
 }
