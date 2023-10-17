@@ -24,25 +24,33 @@
     <header class="navbar m-0-auto">
 
         <div class="navbar-logo">
-            <a href="<?= route('admin.home'); ?>">
-                <img src="<?= url('assets/svg/logo-palabra.svg'); ?>" alt="Concepto logo">
-            </a>
+            @auth
+                <a href="<?= route('admin.home'); ?>">
+                    <img src="<?= url('assets/svg/logo-palabra.svg'); ?>" alt="Concepto logo">
+                </a>
+            @else
+                <a href="<?= route('web.home'); ?>">
+                    <img src="<?= url('assets/svg/logo-palabra.svg'); ?>" alt="Concepto logo">
+                </a>
+            @endauth
         </div>
 
         <button class="mobile-nav-toggle" id="nav-toggle" aria-expanded="false"></button>
 
         <nav>
             <ul id="primary-navigation" data-visible="false">
-                <li>
-                    <a href="<?= route('admin.home'); ?>" class="navigation-anchor">
-                        <p>Dashboard</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?= route('admin.blog'); ?>" class="navigation-anchor">
-                        <p>Blog</p>
-                    </a>
-                </li>
+                @auth
+                    <li>
+                        <a href="<?= route('admin.home'); ?>" class="navigation-anchor">
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<?= route('admin.blog'); ?>" class="navigation-anchor">
+                            <p>Blog</p>
+                        </a>
+                    </li>
+                @endauth
                 <li>
                     <a href="<?= route('web.home'); ?>" class="navigation-anchor">
                         <p>Ir al sitio</p>
@@ -51,7 +59,17 @@
             </ul>
         </nav>
 
-        <a href="" class="navigation-anchor">Cerrar sesión</a>
+        @auth
+            <form action="{{ route('auth.logout.process') }}" method="post">
+                @csrf
+                <button type="submit" class="navigation-anchor logout-button">Cerrar sesión</button>
+            </form>
+        @else
+            <a href="<?= route('auth.login.form'); ?>" class="navigation-anchor">Iniciar sesión</a>
+        @endauth
+
+      
+        {{-- <a href="" class="navigation-anchor">Cerrar sesión</a> --}}
 
     </header>
 

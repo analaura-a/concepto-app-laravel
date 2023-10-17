@@ -42,4 +42,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public const CREATE_RULES = [
+        'username' => 'required',
+        'password' => 'required',
+    ];
+
+    public const CREATE_MESSAGES = [
+        'username.required' => 'El nombre de usuario no puede estar vacío.',
+        'password.required' => 'La contraseña no puede estar vacía.',
+    ];
 }

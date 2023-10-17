@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 
 /*----------------------------
  Sitio web
@@ -37,21 +33,22 @@ Panel de administración
 ----------------------------*/
 Route::get('/admin/iniciar-sesion', [\App\Http\Controllers\AuthController::class, 'loginForm'])->name('auth.login.form');
 
-Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.home');
+Route::post('/admin/iniciar-sesion', [\App\Http\Controllers\AuthController::class, 'loginProcess'])->name('auth.login.process');
 
-Route::get('/admin/blog', [\App\Http\Controllers\BlogController::class, 'admin'])->name('admin.blog');
+Route::post('/admin/cerrar-sesion', [\App\Http\Controllers\AuthController::class, 'logoutProcess'])->name('auth.logout.process');
 
-Route::get('/admin/blog/nueva-entrada', [\App\Http\Controllers\BlogController::class, 'createForm'])->name('admin.blog.create.form');
+Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.home')->middleware('auth');
 
-Route::post('/admin/blog/nueva-entrada', [\App\Http\Controllers\BlogController::class, 'createProcess'])->name('admin.blog.create.process');
+Route::get('/admin/blog', [\App\Http\Controllers\BlogController::class, 'admin'])->name('admin.blog')->middleware('auth');
 
-Route::get('/admin/blog/{id}/editar-entrada', [\App\Http\Controllers\BlogController::class, 'editForm'])->name('admin.blog.edit.form');
+Route::get('/admin/blog/nueva-entrada', [\App\Http\Controllers\BlogController::class, 'createForm'])->name('admin.blog.create.form')->middleware('auth');
 
-Route::post('/admin/blog/{id}/editar-entrada', [\App\Http\Controllers\BlogController::class, 'editProcess'])->name('admin.blog.edit.process');
+Route::post('/admin/blog/nueva-entrada', [\App\Http\Controllers\BlogController::class, 'createProcess'])->name('admin.blog.create.process')->middleware('auth');
 
-Route::get('/admin/blog/{id}/eliminar-entrada', [\App\Http\Controllers\BlogController::class, 'deleteForm'])->name('admin.blog.delete.form');
+Route::get('/admin/blog/{id}/editar-entrada', [\App\Http\Controllers\BlogController::class, 'editForm'])->name('admin.blog.edit.form')->middleware('auth');
 
-Route::post('/admin/blog/{id}/eliminar-entrada', [\App\Http\Controllers\BlogController::class, 'deleteProcess'])->name('admin.blog.delete.process');
+Route::post('/admin/blog/{id}/editar-entrada', [\App\Http\Controllers\BlogController::class, 'editProcess'])->name('admin.blog.edit.process')->middleware('auth');
 
+Route::get('/admin/blog/{id}/eliminar-entrada', [\App\Http\Controllers\BlogController::class, 'deleteForm'])->name('admin.blog.delete.form')->middleware('auth');
 
-// Route::get('/admin/author', );
+Route::post('/admin/blog/{id}/eliminar-entrada', [\App\Http\Controllers\BlogController::class, 'deleteProcess'])->name('admin.blog.delete.process')->middleware('auth');
