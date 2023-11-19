@@ -32,6 +32,14 @@ class Blogpost extends Model
         'author_id.required' => 'Es necesario que elijas a un/a autor/a.',
     ];
 
+    public const EDIT_RULES = [
+        'category' => 'required|min:3',
+        'title' => 'required|min:2',
+        'summary' => 'required',
+        'content' => 'required',
+        'author_id' => 'required'
+    ];
+
     public function author(): BelongsTo
     {
         return $this->belongsTo(Author::class, 'author_id', 'id');

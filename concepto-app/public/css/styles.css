@@ -1148,7 +1148,8 @@ footer {
     margin-bottom: 20px;
 }
 
-.form-input>label {
+.form-input>label,
+.label-form-style {
     font-weight: var(--general-medium);
     font-size: var(--font-16px);
     color: var(--color-gray-1000);

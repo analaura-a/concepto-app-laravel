@@ -73,21 +73,22 @@ class BlogController extends Controller
 
         $post = Blogpost::findOrFail($id);
 
-        $request->validate(Blogpost::CREATE_RULES, Blogpost::CREATE_MESSAGES);
+        $request->validate(Blogpost::EDIT_RULES, Blogpost::CREATE_MESSAGES);
 
         $data = $request->only(['category', 'title', 'summary', 'cover', 'content', 'author_id']);
 
-        $exists = Storage::disk('public')->exists($post->cover);
-
-        if ($exists) {
-            Storage::disk('public')->delete($post->cover);
-        }
+        $oldCover = $post->cover;
 
         if ($request->hasFile('cover')) {
             $data['cover'] = $request->file('cover')->store('covers');
         }
 
         $post->update($data);
+
+        // Eliminamos la portada anterior, si la cambiaron.
+        if ($request->hasFile('cover') && !empty($oldCover) && Storage::has($oldCover)) {
+            Storage::delete($oldCover);
+        }
 
         return redirect()
             ->route('admin.blog')
