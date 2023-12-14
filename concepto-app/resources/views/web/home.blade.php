@@ -20,7 +20,7 @@
             hecho especialmente para que puedas profundizar
             tus conocimientos y destacar en el mercado laboral actual.</p>
 
-        <a href="<?= route('web.home'); ?>" class="main-cta hero-section-cta">
+        <a href="<?= route('web.courses'); ?>" class="main-cta hero-section-cta">
             <p>Explorar cursos</p>
 
             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 48 48" fill="none">
@@ -228,7 +228,7 @@
         </li>  
     </ul>
 
-    <a href="<?= route('web.home'); ?>" class="main-cta m-0-auto">
+    <a href="<?= route('web.courses'); ?>" class="main-cta m-0-auto">
         <p>Accedé al catálogo completo</p>
 
         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 48 48" fill="none">

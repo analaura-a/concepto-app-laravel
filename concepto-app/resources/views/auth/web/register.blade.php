@@ -14,7 +14,7 @@
                 @csrf
 
                 <div class="form-input">
-                    <label for="email">Correo Electronico<span class="primary-color-text">*</span></label>
+                    <label for="email">Correo electrónico<span class="primary-color-text">*</span></label>
                     <input type="text" id="email" name="email" placeholder="ejemplo@gmail.com"
                         @error('email') aria-describedby="error-email" @enderror value="{{ old('email') }}">
                     @error('email')
