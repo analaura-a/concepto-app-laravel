@@ -75,9 +75,9 @@ class AuthController extends Controller
     {
         $request->validate(User::CREATE_RULES, User::CREATE_MESSAGES);
 
-        $credentials = $request->only(['username', 'password']);
+        $credentials = $request->only(['email', 'password']);
 
-        if ($credentials['username'] != "Admin") {
+        if ($credentials['email'] != "admin@gmail.com") {
             return redirect()
                 ->route('auth.web.login.form')
                 ->withInput()

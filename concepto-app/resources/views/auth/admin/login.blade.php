@@ -14,11 +14,11 @@
                 @csrf
 
                 <div class="form-input">
-                    <label for="username">Nombre de usuario<span class="primary-color-text">*</span></label>
-                    <input type="text" id="username" name="username" placeholder="Usuario"
-                        @error('username') aria-describedby="error-username" @enderror value="{{ old('username') }}">
-                    @error('username')
-                        <p class="text-danger" id="error-username">{{ $message }}</p>
+                    <label for="email">Correo electrónico<span class="primary-color-text">*</span></label>
+                    <input type="text" id="email" name="email" placeholder="Usuario"
+                        @error('email') aria-describedby="error-email" @enderror value="{{ old('email') }}">
+                    @error('email')
+                        <p class="text-danger" id="error-email">{{ $message }}</p>
                     @enderror
                 </div>
 

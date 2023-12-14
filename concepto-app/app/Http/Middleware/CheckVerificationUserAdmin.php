@@ -26,8 +26,8 @@ class CheckVerificationUserAdmin
             }
         }
 
-        // Si no coincide, redirigir al login de un usuario común.
+        // Si no coincide, redirigimos al sitio web
         return redirect()
-            ->route('auth.web.login.form');
+            ->route('web.home');
     }
 }
