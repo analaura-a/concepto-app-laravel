@@ -46,12 +46,12 @@ class User extends Authenticatable
     ];
 
     public const CREATE_RULES = [
-        'username' => 'required',
+        'email' => 'required',
         'password' => 'required',
     ];
 
     public const CREATE_MESSAGES = [
-        'username.required' => 'El nombre de usuario no puede estar vacío.',
+        'email.required' => 'El correo electrónico no puede estar vacío.',
         'password.required' => 'La contraseña no puede estar vacía.',
     ];
 

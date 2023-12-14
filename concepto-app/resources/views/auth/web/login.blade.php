@@ -14,11 +14,11 @@
                 @csrf
 
                 <div class="form-input">
-                    <label for="username">Nombre de usuario<span class="primary-color-text">*</span></label>
-                    <input type="text" id="username" name="username" placeholder="Usuario"
-                        @error('username') aria-describedby="error-username" @enderror value="{{ old('username') }}">
-                    @error('username')
-                        <p class="text-danger" id="error-username">{{ $message }}</p>
+                    <label for="email">Correo electrónico<span class="primary-color-text">*</span></label>
+                    <input type="text" id="email" name="email" placeholder="Usuario"
+                        @error('email') aria-describedby="error-email" @enderror value="{{ old('email') }}">
+                    @error('email')
+                        <p class="text-danger" id="error-email">{{ $message }}</p>
                     @enderror
                 </div>
 
@@ -36,8 +36,8 @@
             </form>
 
             <div class="btn-register">
-                <p>¿Aún no tienes una cuenta?</p>
-                <a href="<?= route('auth.web.register') ?>" class="primary-color-text bold">Registrarse</a>
+                <p class="paragraph">¿Aún no tenés una cuenta?</p>
+                <a href="<?= route('auth.web.register') ?>" class="paragraph primary-color-text bold">Registrarse</a>
             </div>
 
         </div>

@@ -115,7 +115,7 @@ p {
 }
 
 body {
-    background: linear-gradient(180deg, hsl(223, 100%, 99%) 0%, hsl(218deg 62.9% 94.03%) 100%);
+    background: linear-gradient(180deg, hsl(223, 100%, 99%) 0%, hsl(218 63% 96% / 1) 100%);
     font-family: var(--general-font);
     overflow-x: hidden;
 }
@@ -206,6 +206,10 @@ body {
 
 .paragraph-color-text {
     color: var(--color-gray-800);
+}
+
+.text-danger {
+    color: #DC3545;
 }
 
 

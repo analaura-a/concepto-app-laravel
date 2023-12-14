@@ -17,7 +17,7 @@ class AuthController extends Controller
     {
         $request->validate(User::CREATE_RULES, User::CREATE_MESSAGES);
 
-        $credentials = $request->only(['username', 'password']);
+        $credentials = $request->only(['email', 'password']);
 
         if (!auth()->attempt($credentials)) {
             return redirect()
