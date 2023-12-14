@@ -7,7 +7,7 @@
     <section class="container mt-100 mb-100">
 
         <div class="title-with-button mb-64">
-            <h1 class="h1 h1-bigger max-600">Listado de Usuarios</h1>
+            <h1 class="h1 h1-bigger max-600">Listado de usuarios</h1>
         </div>
 
         <div class="table-responsive">
@@ -16,10 +16,9 @@
 
                     <tr>
                         <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Email</th>
-                        <th>Servicio Contratado</th>
-                        <th>Acción</th>
+                        <th>Correo electrónico</th>
+                        <th>Servicio contratado</th>
+                        <th>Acciones</th>
                     </tr>
 
                 </thead>
@@ -28,15 +27,12 @@
                     @foreach ($users as $user)
                         <tr>
                             <td>{{ $user->id }}</td>
-                            <td>{{ $user->username }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->service->name }}</td>
 
-
                             <td>
-                                <a href="{{ url('/admin/usuarios/' . $user->id) }}" class="btn btn-primary">Ver</a>
+                                <a href="{{ url('/admin/usuarios/' . $user->id) }}" class="btn btn-primary">Ver detalle</a>
                             </td>
-
                         </tr>
                     @endforeach
 

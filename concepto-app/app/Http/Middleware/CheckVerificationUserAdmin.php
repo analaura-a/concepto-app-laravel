@@ -13,7 +13,7 @@ class CheckVerificationUserAdmin
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next, $username): Response
+    public function handle(Request $request, Closure $next, $email): Response
     {
         // Verificar si el usuario está autenticado
         if (Auth::check()) {
@@ -21,7 +21,7 @@ class CheckVerificationUserAdmin
             $user = Auth::user();
 
             // Verificar si el nombre de usuario coincide con el proporcionado en este caso 'Admin'
-            if ($user->username === $username) {
+            if ($user->email === $email) {
                 return $next($request);
             }
         }

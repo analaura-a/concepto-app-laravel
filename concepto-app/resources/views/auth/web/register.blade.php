@@ -23,15 +23,6 @@
                 </div>
 
                 <div class="form-input">
-                    <label for="username">Nombre de usuario<span class="primary-color-text">*</span></label>
-                    <input type="text" id="username" name="username" placeholder="Usuario"
-                        @error('username') aria-describedby="error-username" @enderror value="{{ old('username') }}">
-                    @error('username')
-                        <p class="text-danger" id="error-username">{{ $message }}</p>
-                    @enderror
-                </div>
-
-                <div class="form-input">
                     <label for="password">Contraseña<span class="primary-color-text">*</span></label>
                     <input type="password" class="mb-8" id="password" name="password" placeholder="**********"
                         @error('password') aria-describedby="error-password" @enderror>

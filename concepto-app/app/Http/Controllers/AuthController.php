@@ -28,7 +28,7 @@ class AuthController extends Controller
 
         return redirect()
             ->route('web.home')
-            ->with('status.message', '¡Hola de nuevo, ' . auth()->user()->username . '!');
+            ->with('status.message', '¡Hola de nuevo, ' . auth()->user()->email . '!');
     }
 
     public function logoutProcessUser(Request $request)
@@ -54,7 +54,7 @@ class AuthController extends Controller
     {
         $request->validate(User::CREATE_RULES_REGISTER, User::CREATE_MESSAGES_REGISTER);
 
-        $data = $request->only(['username', 'email', 'password']);
+        $data = $request->only(['email', 'password']);
 
         User::create(
             $data
@@ -91,7 +91,7 @@ class AuthController extends Controller
             } else {
                 return redirect()
                     ->route('admin.home')
-                    ->with('status.message', '¡Hola de nuevo, ' . auth()->user()->username . '!');
+                    ->with('status.message', '¡Hola de nuevo, ' . auth()->user()->email . '!');
             }
         }
     }
