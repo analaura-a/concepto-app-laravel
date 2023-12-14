@@ -16,9 +16,9 @@
                 <div class="form-input">
                     <label for="email">Correo Electronico<span class="primary-color-text">*</span></label>
                     <input type="text" id="email" name="email" placeholder="ejemplo@gmail.com"
-                        @error('email') aria-describedby="error-username" @enderror value="{{ old('username') }}">
+                        @error('email') aria-describedby="error-email" @enderror value="{{ old('email') }}">
                     @error('email')
-                        <p class="text-danger" id="error-username">{{ $message }}</p>
+                        <p class="text-danger" id="error-email">{{ $message }}</p>
                     @enderror
                 </div>
 

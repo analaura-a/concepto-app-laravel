@@ -47,7 +47,7 @@ class AuthController extends Controller
     public function createFormRegister()
     {
 
-        return view('auth.web.create');
+        return view('auth.web.register');
     }
 
     public function createProcessRegister(Request $request)
@@ -60,7 +60,9 @@ class AuthController extends Controller
             $data
         );
 
-        return redirect('/iniciar-sesion');
+        return redirect()
+            ->route('auth.web.login.form')
+            ->with('status.message', 'Creaste tu cuenta con éxito. Inicia sesión para ingresar.');
     }
 
     // Login del Usuario Administrador

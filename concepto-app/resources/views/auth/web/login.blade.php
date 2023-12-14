@@ -37,7 +37,7 @@
 
             <div class="btn-register">
                 <p>¿Aun no tienes cuenta?</p>
-                <a href="{{ url('/registrar') }}">Registrarse</a>
+                <a href="<?= route('auth.web.register') ?>">Registrarse</a>
             </div>
 
         </div>

@@ -35,9 +35,9 @@ Route::post('/iniciar-sesion', [\App\Http\Controllers\AuthController::class, 'lo
 
 Route::post('/cerrar-sesion', [\App\Http\Controllers\AuthController::class, 'logoutProcessUser'])->name('auth.web.logout.process');
 
-Route::get('/registrar', [\App\Http\Controllers\AuthController::class, 'createFormRegister'])->name('auth.web.create.form');
+Route::get('/registrar', [\App\Http\Controllers\AuthController::class, 'createFormRegister'])->name('auth.web.register');
 
-Route::post('/registrar', [\App\Http\Controllers\AuthController::class, 'createProcessRegister'])->name('auth.web.create.form');
+Route::post('/registrar', [\App\Http\Controllers\AuthController::class, 'createProcessRegister'])->name('auth.web.register');
 
 
 /*----------------------------
@@ -52,7 +52,6 @@ Route::post('/admin/cerrar-sesion', [\App\Http\Controllers\AuthController::class
 
 Route::middleware(['auth', 'userAdmin:Admin'])
     ->group(function () {
-
         Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.home');
 
         Route::get('/admin/blog', [\App\Http\Controllers\BlogController::class, 'admin'])->name('admin.blog');
