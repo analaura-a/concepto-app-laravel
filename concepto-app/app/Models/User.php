@@ -56,17 +56,14 @@ class User extends Authenticatable
     ];
 
     public const CREATE_RULES_REGISTER = [
-        'username' => 'required|min:3',
         'email' => 'required',
-        'password' => 'required|min:4',
+        'password' => 'required|min:8',
     ];
 
     public const CREATE_MESSAGES_REGISTER = [
-        'username.required' => 'El nombre de usuario no puede estar vacio en el registro',
-        'username.min' => 'El nombre de usuario debe tener al menos :min caracteres.',
-        'email.required' => 'El email no puede estar vacio en el registro.',
-        'password.required' => 'La contraseña no puede estar vacia.',
-        'password.min' => 'la contraseña debe tener al menos :min caracteres.',
+        'email.required' => 'El email no puede estar vacío.',
+        'password.required' => 'La contraseña no puede estar vacía.',
+        'password.min' => 'La contraseña debe tener al menos :min caracteres.',
     ];
 
     public function service(): BelongsTo

@@ -33,8 +33,9 @@
 
                 <div class="form-input">
                     <label for="password">Contraseña<span class="primary-color-text">*</span></label>
-                    <input type="password" id="password" name="password" placeholder="**********"
+                    <input type="password" class="mb-8" id="password" name="password" placeholder="**********"
                         @error('password') aria-describedby="error-password" @enderror>
+                    <p class="paragraph-color-text">La contraseña debe contener mínimo 8 caracteres.</p>
                     @error('password')
                         <p class="text-danger" id="error-password">{{ $message }}</p>
                     @enderror

@@ -49,7 +49,9 @@ use Illuminate\Support\ViewErrorBag;
                 <div class="form-input">
                     <label for="summary">Breve resumen<span class="primary-color-text">*</span></label>
                     <textarea id="summary" name="summary" rows="5" placeholder="Esta publicación habla de..."
-                        @error('summary') aria-describedby="error-summary" @enderror>{{ old('summary', $post->summary) }}</textarea>
+                        @error('summary') aria-describedby="error-summary" @enderror>{{ old('summary', $post->summary) }}
+                    </textarea>
+                    <p class="mt-2 paragraph-color-text">El resumen debe contener mínimo 100 caracteres.</p>
                     @error('summary')
                         <p class="text-danger" id="error-summary">{{ $message }}</p>
                     @enderror

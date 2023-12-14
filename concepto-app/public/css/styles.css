@@ -1145,7 +1145,7 @@ footer {
     display: flex;
     flex-direction: column;
 
-    margin-bottom: 20px;
+    margin-bottom: 32px;
 }
 
 .form-input>label,
