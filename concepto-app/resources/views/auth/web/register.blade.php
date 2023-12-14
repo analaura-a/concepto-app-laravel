@@ -6,7 +6,7 @@
 
     <section class="container mt-100 mb-100 mb-201">
 
-        <h1 class="h1 h1-bigger text-center mb-64">Crea una cuenta</h1>
+        <h1 class="h1 h1-bigger text-center mb-64">Crear una cuenta</h1>
 
         <div class="checkout-form m-0-auto">
 

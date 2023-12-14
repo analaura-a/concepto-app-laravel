@@ -35,16 +35,16 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<?= route('web.blog') ?>" class="navigation-anchor">
-                        <p>Blog</p>
-                    </a>
-                </li>
-                <li>
                     <a href="<?= route('web.courses') ?>" class="navigation-anchor">
                         <p>Cursos</p>
                     </a>
                 </li>
-
+                <li>
+                    <a href="<?= route('web.blog') ?>" class="navigation-anchor">
+                        <p>Blog</p>
+                    </a>
+                </li>
+            </ul>
         </nav>
 
         @auth

@@ -17,7 +17,7 @@
     </p>
 </section>
 
-<section class="container mb-200" id="seccionTendencias">
+<section class="container mt-32 mb-200" id="seccionTendencias">
 
     <ul class="container-cards mb-56">
 

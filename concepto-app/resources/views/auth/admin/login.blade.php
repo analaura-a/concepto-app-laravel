@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <section class="container mt-100 mb-100 mb-201">
+    <section class="container mt-100 mb-100">
 
         <h1 class="h1 h1-bigger text-center mb-64">Iniciar sesión</h1>
 
