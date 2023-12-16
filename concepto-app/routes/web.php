@@ -50,7 +50,7 @@ Route::post('/admin/iniciar-sesion', [\App\Http\Controllers\AuthController::clas
 
 Route::post('/admin/cerrar-sesion', [\App\Http\Controllers\AuthController::class, 'logoutProcessAdmin'])->name('auth.admin.logout.process');
 
-Route::middleware(['auth', 'userAdmin:admin@gmail.com'])
+Route::middleware(['auth', 'userAdmin:Admin'])
     ->group(function () {
         Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.home');
 
