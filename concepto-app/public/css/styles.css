@@ -656,7 +656,7 @@ body {
 
 .hero-section-description {
     font-size: clamp(1rem, 1vw + 0.9rem, 1.25rem);
-    line-height: 135%;
+    line-height: 140%;
 }
 
 .main-cta {
