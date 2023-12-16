@@ -23,6 +23,7 @@ return new class extends Migration
             $table->unsignedInteger('duration');
             $table->string('level', 100);
             $table->text('requirements');
+            $table->string('tags');
             $table->timestamps();
         });
     }

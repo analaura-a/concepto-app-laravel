@@ -28,6 +28,7 @@ class CourseSeeder extends Seeder
                 'duration' => 5,
                 'level' => 'intermedio',
                 'requirements' => 'Se necesitan conocimientos intermedios en Figma, tales como autolayout, grilla, variables, constraints y prototipado.',
+                'tags' => 'UX/UI.UI.Figma',
                 'created_at' => now(),
                 'updated_at' => now(),
 
@@ -45,6 +46,7 @@ class CourseSeeder extends Seeder
                 'duration' => 3,
                 'level' => 'intermedio',
                 'requirements' => 'Se necesitan conocimientos intermedios en HTML y CSS, ya que no se verá cómo utilizar esas tecnologías en este curso.',
+                'tags' => 'Frontend.CSS.Metodología',
                 'created_at' => now(),
                 'updated_at' => now(),
 
@@ -62,6 +64,7 @@ class CourseSeeder extends Seeder
                 'duration' => 3,
                 'level' => 'intermedio',
                 'requirements' => 'Se necesitan conocimientos intermedios en Figma, puesto que no se explicará desde 0 cómo utilizar la herramienta (solo las funcionalidades de grilla y autolayout).',
+                'tags' => 'UX/UI.UI.Figma',
                 'created_at' => now(),
                 'updated_at' => now(),
 
@@ -79,6 +82,7 @@ class CourseSeeder extends Seeder
                 'duration' => 5,
                 'level' => 'avanzado',
                 'requirements' => 'Se necesitan conocimientos avanzados en HTML, CSS y JavaScript, ya que no se verá cómo utilizar esas tecnologías en este curso.',
+                'tags' => 'Frontend.GSAP.Animaciones.JavaScript',
                 'created_at' => now(),
                 'updated_at' => now(),
 
@@ -96,6 +100,7 @@ class CourseSeeder extends Seeder
                 'duration' => 5,
                 'level' => 'inicial',
                 'requirements' => 'No se necesitan conocimientos en accesibilidad digital ni usabilidad, se verá todo desde 0.',
+                'tags' => 'UX/UI.Accesibilidad',
                 'created_at' => now(),
                 'updated_at' => now(),
 
@@ -113,6 +118,7 @@ class CourseSeeder extends Seeder
                 'duration' => 5,
                 'level' => 'avanzado',
                 'requirements' => 'Se necesitan conocimientos avanzados en HTML, CSS y JavaScript, ya que no se verá cómo utilizar esas tecnologías en este curso.',
+                'tags' => 'Frontend.Threejs.Animaciones.JavaScript',
                 'created_at' => now(),
                 'updated_at' => now(),
 

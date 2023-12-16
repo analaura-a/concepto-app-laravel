@@ -20,8 +20,13 @@ class CourseController extends Controller
 
     public function courseDetail(int $id)
     {
+        $course = Course::findOrFail($id);
+
+        $tagsString = $course->tags;
+        $tagsArray = explode('.', $tagsString);
+
         return view('web/course_detail', [
-            'course' => Course::findOrFail($id),
-        ]);
+            'course' => $course,
+        ], compact('tagsArray'));
     }
 }

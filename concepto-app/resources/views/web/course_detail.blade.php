@@ -144,7 +144,11 @@ use Illuminate\Support\Str;
 
                 <div class="pt-40">
                     <h2 class="h3 mb-12">Temas</h2>
-                    <ul class="course-subjects" id="course-subjects"></ul>
+                    <ul class="course-subjects" id="course-subjects">
+                        @foreach ($tagsArray as $tag)
+                            <li>{{ $tag }}</li>
+                        @endforeach
+                    </ul>
                 </div>
 
             </div>
