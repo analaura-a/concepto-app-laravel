@@ -23,6 +23,10 @@ Route::get('/', [\App\Http\Controllers\WebsiteController::class, 'index'])->name
 
 Route::get('/cursos', [\App\Http\Controllers\CourseController::class, 'index'])->name('web.courses');
 
+Route::get('/cursos/{id}', [\App\Http\Controllers\CourseController::class, 'courseDetail'])
+    ->whereNumber('id')
+    ->name('web.courses.detail');
+
 Route::get('/blog', [\App\Http\Controllers\BlogController::class, 'list'])->name('web.blog');
 
 Route::get('/blog/{id}', [\App\Http\Controllers\BlogController::class, 'post'])

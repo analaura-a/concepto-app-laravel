@@ -15,7 +15,7 @@ use Illuminate\Support\Str;
         <ul class="container-cards" id="container-courses">
             @foreach ($courses as $course)
                 <li class="course-card">
-                    <a class="anchor-detail" href="#">
+                    <a class="anchor-detail" href="<?= route('web.courses.detail', ['id' => $course->course_id]) ?>">
                         <div class="card-img">
                             @if (Str::of($course->cover)->startsWith('https'))
                                 <img src="{{ $course->cover }}" alt="{{ $course->name }}">
