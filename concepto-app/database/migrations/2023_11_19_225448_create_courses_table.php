@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('cover')->nullable();
             $table->text('short_description');
             $table->text('description');
+            $table->unsignedInteger('price');
             $table->string('rating', 100);
             $table->unsignedInteger('students');
             $table->unsignedInteger('duration');
