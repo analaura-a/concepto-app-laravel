@@ -18,7 +18,8 @@ class UserSeeder extends Seeder
             [
                 'id' => 1,
                 'email' => 'admin@gmail.com',
-                'password' => Hash::make('admin'),
+                'password' => Hash::make('12345678'),
+                'role' => 'Admin',
                 'service_id' => 4,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -26,7 +27,8 @@ class UserSeeder extends Seeder
             [
                 'id' => 2,
                 'email' => 'brisa@gmail.com',
-                'password' => Hash::make('brisa'),
+                'password' => Hash::make('12345678'),
+                'role' => 'User',
                 'service_id' => 3,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -34,7 +36,8 @@ class UserSeeder extends Seeder
             [
                 'id' => 3,
                 'email' => 'ana@gmail.com',
-                'password' => Hash::make('analaura'),
+                'password' => Hash::make('12345678'),
+                'role' => 'User',
                 'service_id' => 2,
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -42,7 +45,8 @@ class UserSeeder extends Seeder
             [
                 'id' => 4,
                 'email' => 'gallino@gmail.com',
-                'password' => Hash::make('santiago'),
+                'password' => Hash::make('12345678'),
+                'role' => 'User',
                 'service_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
