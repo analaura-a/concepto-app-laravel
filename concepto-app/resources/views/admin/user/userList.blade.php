@@ -17,7 +17,6 @@
                     <tr>
                         <th>ID</th>
                         <th>Correo electrónico</th>
-                        <th>Servicio contratado</th>
                         <th>Acciones</th>
                     </tr>
 
@@ -28,7 +27,6 @@
                         <tr>
                             <td>{{ $user->id }}</td>
                             <td>{{ $user->email }}</td>
-                            <td>{{ $user->service->name }}</td>
 
                             <td>
                                 <a href="{{ url('/admin/usuarios/' . $user->id) }}" class="btn btn-primary">Ver detalle</a>

@@ -21,7 +21,6 @@ class User extends Authenticatable
     protected $fillable = [
         'email',
         'password',
-        'service_id'
     ];
 
     /**
@@ -65,8 +64,4 @@ class User extends Authenticatable
         'password.min' => 'La contraseña debe tener al menos :min caracteres.',
     ];
 
-    public function service(): BelongsTo
-    {
-        return $this->belongsTo(Service::class, 'service_id', 'service_id');
-    }
 }

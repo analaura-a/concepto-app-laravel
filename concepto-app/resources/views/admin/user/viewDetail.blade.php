@@ -16,13 +16,13 @@
     <section class="container mb-64 service-info">
 
         <h2 class="h3 mb-16">Servicio Contratado</h2>
-        <div>
+        {{-- <div>
             <div>
                 <h3 class="author-name">Plan : {{ $user->service->name }}</h3>
                 <p class="paragraph">{{ $user->service->description }}</p>
                 <p class="text-center paragraph-color-text bold mb-64"> Precio : ${{ $user->service->price }}/mes</p>
             </div>
-        </div>
+        </div> --}}
 
     </section>
 

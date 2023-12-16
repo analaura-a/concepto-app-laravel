@@ -113,8 +113,7 @@ class AuthController extends Controller
     //Funciones para la lista de usuarios autenticados para el usuario admin
     public function userList()
     {
-
-        $users = User::with('service')->get();
+        $users = User::all();
         return view('admin.user.userList', [
             'users' => $users,
         ]);
