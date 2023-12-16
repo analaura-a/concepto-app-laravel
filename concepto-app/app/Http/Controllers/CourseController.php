@@ -25,8 +25,11 @@ class CourseController extends Controller
         $tagsString = $course->tags;
         $tagsArray = explode('.', $tagsString);
 
+        $learningsString = $course->learnings;
+        $learningsArray = explode('.', $learningsString);
+
         return view('web/course_detail', [
             'course' => $course,
-        ], compact('tagsArray'));
+        ], compact('tagsArray', 'learningsArray'));
     }
 }

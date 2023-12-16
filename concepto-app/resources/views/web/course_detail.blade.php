@@ -49,7 +49,18 @@ use Illuminate\Support\Str;
 
                 <div class="course-learnings">
                     <h2 class="h3 mb-16">Qué vas a aprender</h2>
-                    <ul id="course-learnings"></ul>
+                    <ul id="course-learnings">
+                        @foreach ($learningsArray as $learning)
+                            <li class="learning">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none"
+                                    viewbox="0 0 48 48">
+                                    <path stroke="#8BA5FF" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                                        d="m12 27.167 6 6.333 18-19" />
+                                </svg>
+                                <p class="paragraph">{{ $learning }}</p>
+                            </li>
+                        @endforeach
+                    </ul>
                 </div>
 
             </div>

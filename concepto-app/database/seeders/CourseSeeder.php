@@ -29,6 +29,7 @@ class CourseSeeder extends Seeder
                 'level' => 'intermedio',
                 'requirements' => 'Se necesitan conocimientos intermedios en Figma, tales como autolayout, grilla, variables, constraints y prototipado.',
                 'tags' => 'UX/UI.UI.Figma',
+                'learnings' => 'Qué es un Design System y cuándo se necesita uno.Construir componentes que forman parte de un Design System.Plugins de Figma que para agilizar el proceso.Handoff: buenas prácticas al momento de colaborar con developers',
                 'created_at' => now(),
                 'updated_at' => now(),
 
@@ -47,6 +48,7 @@ class CourseSeeder extends Seeder
                 'level' => 'intermedio',
                 'requirements' => 'Se necesitan conocimientos intermedios en HTML y CSS, ya que no se verá cómo utilizar esas tecnologías en este curso.',
                 'tags' => 'Frontend.CSS.Metodología',
+                'learnings' => 'Qué es la nomenclatura BEM y cómo se utiliza.La metodología BEMIT (BEM CSS + ITCSS).Escribir CSS de manera escalable a largo plazo.Código limpio y buenas prácticas al maquetar',
                 'created_at' => now(),
                 'updated_at' => now(),
 
@@ -65,6 +67,7 @@ class CourseSeeder extends Seeder
                 'level' => 'intermedio',
                 'requirements' => 'Se necesitan conocimientos intermedios en Figma, puesto que no se explicará desde 0 cómo utilizar la herramienta (solo las funcionalidades de grilla y autolayout).',
                 'tags' => 'UX/UI.UI.Figma',
+                'learnings' => 'Cómo diseñar utilizando grillas responsive y adaptables en Figma.Añadir contenido evitando errores comunes de posicionamiento.Aplicación básica de columnas, gutter, margen y filas.Qué son los breakpoints, de dónde vienen y cómo utilizarlos',
                 'created_at' => now(),
                 'updated_at' => now(),
 
@@ -83,6 +86,7 @@ class CourseSeeder extends Seeder
                 'level' => 'avanzado',
                 'requirements' => 'Se necesitan conocimientos avanzados en HTML, CSS y JavaScript, ya que no se verá cómo utilizar esas tecnologías en este curso.',
                 'tags' => 'Frontend.GSAP.Animaciones.JavaScript',
+                'learnings' => 'Cómo crear sofisticados componentes UI con GSAP.Darle profesionalidad a tus webs con animaciones.Cómo crear líneas de tiempo de animación complejas.Cómo poner en práctica lo aprendido en webs reales',
                 'created_at' => now(),
                 'updated_at' => now(),
 
@@ -101,6 +105,7 @@ class CourseSeeder extends Seeder
                 'level' => 'inicial',
                 'requirements' => 'No se necesitan conocimientos en accesibilidad digital ni usabilidad, se verá todo desde 0.',
                 'tags' => 'UX/UI.Accesibilidad',
+                'learnings' => 'Cómo diseñar pensando en la accesibilidad.Fundamentos de la accesibilidad: cuándo, cómo y por qué.Mejores prácticas y estrategias para diseñar de manera inclusiva.Ejemplos prácticos del día a día de un diseñador UX profesional',
                 'created_at' => now(),
                 'updated_at' => now(),
 
@@ -118,7 +123,8 @@ class CourseSeeder extends Seeder
                 'duration' => 5,
                 'level' => 'avanzado',
                 'requirements' => 'Se necesitan conocimientos avanzados en HTML, CSS y JavaScript, ya que no se verá cómo utilizar esas tecnologías en este curso.',
-                'tags' => 'Frontend.Threejs.Animaciones.JavaScript',
+                'tags' => 'Frontend.ThreeJS.Animaciones.JavaScript',
+                'learnings' => 'Fundamentos teóricos de la librería ThreeJS.Cómo instalar ThreeJS e importarlo a tu proyecto.Cómo recorrer la escena con movimientos de la cámara en 3D.Cómo añadir elementos web HTML y CSS a tu escena',
                 'created_at' => now(),
                 'updated_at' => now(),
 

@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('level', 100);
             $table->text('requirements');
             $table->string('tags');
+            $table->string('learnings');
             $table->timestamps();
         });
     }
