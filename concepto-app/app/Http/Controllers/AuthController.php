@@ -77,17 +77,19 @@ class AuthController extends Controller
 
         $credentials = $request->only(['email', 'password']);
 
-        if ($credentials['email'] != "admin@gmail.com") {
+        if (!auth()->attempt($credentials)) {
             return redirect()
-                ->route('auth.web.login.form')
+                ->route('auth.admin.login.form')
                 ->withInput()
-                ->with('status.message', 'No sos el admin.');
+                ->with('status.message', 'Las credenciales ingresadas no coinciden con nuestros registros.');
         } else {
-            if (!auth()->attempt($credentials)) {
+
+            $userRole = auth()->user()->role;
+
+            if ($userRole != "Admin") {
                 return redirect()
-                    ->route('auth.admin.login.form')
-                    ->withInput()
-                    ->with('status.message', 'Las credenciales ingresadas no coinciden con nuestros registros.');
+                    ->route('web.home')
+                    ->with('status.message', '¡Hola de nuevo, ' . auth()->user()->email . '!');
             } else {
                 return redirect()
                     ->route('admin.home')
