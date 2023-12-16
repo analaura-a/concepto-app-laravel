@@ -45,16 +45,52 @@
                         <p>Blog</p>
                     </a>
                 </li>
+
+                @auth
+                    <li>
+                        <a href="#" class="navigation-anchor">
+                            <p>Mis cursos</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="navigation-anchor">
+                            <p>Mi perfil (<?= auth()->user()->email ?>)</p>
+                        </a>
+                    </li>
+                    <li>
+                        <form action="{{ route('auth.web.logout.process') }}" method="post">
+                            @csrf
+                            <button type="submit" class="navigation-anchor logout-button">Cerrar sesión</button>
+                        </form>
+                    </li>
+                @endauth
+
             </ul>
         </nav>
 
         @auth
-            <form action="{{ route('auth.web.logout.process') }}" method="post">
-                @csrf
-                <button type="submit" class="navigation-anchor logout-button">Cerrar sesión</button>
-            </form>
+            <div class="navbar-cart">
+                <a href="#">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewbox="0 0 48 48"
+                            fill="none">
+                            <path stroke="#3E4B62" stroke-linecap="round" stroke-width="2"
+                                d="m7 8.65 2.8.56a2 2 0 0 1 1.597 1.762l.363 3.628m0 0 1.829 15.238a2 2 0 0 0 1.985 1.762h18.443a3.5 3.5 0 0 0 3.396-2.651l2.873-11.491a2.3 2.3 0 0 0-2.232-2.858H11.76Z"
+                                class="icon-svg" />
+                            <path stroke="#3E4B62" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M18.9 26.5h6.8" class="icon-svg" />
+                            <path fill="#3E4B62"
+                                d="M20.6 37.55a2.55 2.55 0 1 1-5.1 0 2.55 2.55 0 0 1 5.1 0ZM35.9 37.55a2.55 2.55 0 1 1-5.1 0 2.55 2.55 0 0 1 5.1 0Z"
+                                class="icon-svg-fill" />
+                        </svg>
+                        <span class="cart-count" id="cart-count" data-cart-count="0"></span>
+                    </div>
+
+                    <p class="navigation-anchor" id="cart-total">$0</p>
+                </a>
+            </div>
         @else
-            <a href="<?= route('auth.web.login.form') ?>" class="navigation-anchor">Iniciar sesión</a>
+            <a href="<?= route('auth.web.login.form') ?>" class="secondary-cta">Iniciar sesión</a>
         @endauth
 
 
@@ -85,7 +121,7 @@
                 </svg>
             </a>
             <p class="footer-copyright">© 2023 Concepto.</p>
-            <p class="footer-copyright">Made with &hearts; by Ana Laura Almirón & Brisa Marca.</p>
+            <p class="footer-copyright">Hecho con &hearts; por Ana Laura Almirón & Brisa Marca.</p>
         </div>
 
         <div class="footer-socials">

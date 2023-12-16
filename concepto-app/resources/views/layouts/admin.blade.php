@@ -101,7 +101,7 @@
                 </svg>
             </a>
             <p class="footer-copyright">© 2023 Concepto.</p>
-            <p class="footer-copyright">Made with &hearts; by Ana Laura Almirón & Brisa Marca.</p>
+            <p class="footer-copyright">Hecho con &hearts; por Ana Laura Almirón & Brisa Marca.</p>
         </div>
 
         <div class="footer-socials">
