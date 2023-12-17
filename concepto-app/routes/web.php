@@ -47,6 +47,12 @@ Route::middleware('auth')
     ->group(function () {
         Route::get('/carrito', [\App\Http\Controllers\CartController::class, 'showCart'])
             ->name('web.cart');
+
+        Route::get('/carrito/{id}', [\App\Http\Controllers\CartController::class, 'addToCart'])
+            ->name('web.cart.add');
+
+        Route::get('/deleteCart', [\App\Http\Controllers\CartController::class, 'deleteCart'])
+            ->name('web.cart.delete');
     });
 
 

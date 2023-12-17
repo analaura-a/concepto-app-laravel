@@ -17,6 +17,12 @@ use Illuminate\Support\Str;
 
         <div id="cart">
 
+            @if (session('cart'))
+                Hay productos en el carritoooooooooooooo
+            @else
+                No hay productos en el carritooooooooooo
+            @endif
+
             <div class="cart-container">
 
                 <div class="cart-courses">
@@ -55,9 +61,9 @@ use Illuminate\Support\Str;
                                 </path>
                             </svg>
                         </li>
-                        
+
                     </ul>
-                    <p id="empty-cart">Vaciar carrito</p>
+                    <a href="<?= route('web.cart.delete') ?>" id="empty-cart">Vaciar carrito</a>
                 </div>
 
                 <div class="cart-summary">

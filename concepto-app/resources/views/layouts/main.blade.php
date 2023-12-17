@@ -83,7 +83,7 @@
                                 d="M20.6 37.55a2.55 2.55 0 1 1-5.1 0 2.55 2.55 0 0 1 5.1 0ZM35.9 37.55a2.55 2.55 0 1 1-5.1 0 2.55 2.55 0 0 1 5.1 0Z"
                                 class="icon-svg-fill" />
                         </svg>
-                        <span class="cart-count" id="cart-count" data-cart-count="0"></span>
+                        <span class="cart-count" id="cart-count" data-cart-count="{{ count((array) session('cart')) }}"></span>
                     </div>
 
                     <p class="navigation-anchor" id="cart-total">$0</p>

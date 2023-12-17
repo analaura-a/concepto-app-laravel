@@ -693,6 +693,10 @@ body {
     padding: 16px 22px 16px 22px;
 }
 
+#main-cta-text {
+    color: var(--color-gray-100);
+}
+
 .secondary-cta {
     width: -webkit-fit-content;
     width: -moz-fit-content;

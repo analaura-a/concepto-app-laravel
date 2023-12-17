@@ -91,7 +91,7 @@ use Illuminate\Support\Str;
                     </ul>
 
                     <button class="main-cta" id="mainCTA">
-                        <p id="main-cta-text">Agregar al carrito</p>
+                        <a href="<?= route('web.cart.add', ['id' => $course->course_id]) ?>" id="main-cta-text">Agregar al carrito</a>
                         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 48 48"
                             fill="none">
                             <path stroke="#fff" stroke-linecap="round" stroke-width="2"
