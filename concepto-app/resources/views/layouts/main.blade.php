@@ -1,3 +1,15 @@
+<?php
+
+$total = 0;
+
+if (session('cart')) {
+    foreach (session('cart') as $course) {
+        $total += $course['price'];
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -86,7 +98,7 @@
                         <span class="cart-count" id="cart-count" data-cart-count="{{ count((array) session('cart')) }}"></span>
                     </div>
 
-                    <p class="navigation-anchor" id="cart-total">$0</p>
+                    <p class="navigation-anchor" id="cart-total">${{ $total }}</p>
                 </a>
             </div>
         @else

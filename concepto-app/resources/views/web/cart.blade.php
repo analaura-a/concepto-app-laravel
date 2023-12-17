@@ -1,6 +1,15 @@
 <?php
 
 use Illuminate\Support\Str;
+
+$total = 0;
+
+if (session('cart')) {
+    foreach (session('cart') as $course) {
+        $total += $course['price'];
+    }
+}
+
 ?>
 
 @extends('layouts.main')
@@ -52,7 +61,7 @@ use Illuminate\Support\Str;
                         <div class="pb-32 pt-32 separador">
                             <div class="subtotal flex-total mb-8">
                                 <p>Subtotal</p>
-                                <p id="subtotal">$14.500</p>
+                                <p id="subtotal">${{ $total }}</p>
                             </div>
                             <div class="subtotal flex-total">
                                 <p>Descuentos</p>
@@ -61,7 +70,7 @@ use Illuminate\Support\Str;
                         </div>
                         <div class="total flex-total pt-32 pb-32">
                             <p>Total a pagar</p>
-                            <p id="total">$14.500</p>
+                            <p id="total">${{ $total }}</p>
                         </div><a class="main-cta" href="#">
                             <p>Comprar ahora</p>
                             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"
