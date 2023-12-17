@@ -43,6 +43,12 @@ Route::get('/registrar', [\App\Http\Controllers\AuthController::class, 'createFo
 
 Route::post('/registrar', [\App\Http\Controllers\AuthController::class, 'createProcessRegister'])->name('auth.web.register');
 
+Route::middleware('auth')
+    ->group(function () {
+        Route::get('/carrito', [\App\Http\Controllers\CartController::class, 'showCart'])
+            ->name('web.cart');
+    });
+
 
 /*----------------------------
 Panel de administración

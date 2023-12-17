@@ -70,7 +70,7 @@
 
         @auth
             <div class="navbar-cart">
-                <a href="#">
+                <a href="<?= route('web.cart') ?>">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewbox="0 0 48 48"
                             fill="none">

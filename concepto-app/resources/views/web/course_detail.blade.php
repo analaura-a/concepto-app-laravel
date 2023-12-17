@@ -5,7 +5,7 @@ use Illuminate\Support\Str;
 
 @extends('layouts.main')
 
-@section('title', 'Concepto - Cursos')
+@section('title', $course->name)
 
 
 @section('content')
