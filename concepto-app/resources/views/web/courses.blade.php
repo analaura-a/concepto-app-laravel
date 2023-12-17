@@ -27,6 +27,7 @@ use Illuminate\Support\Str;
                             <p class="card-content-category mb-8">{{ $course->category->name }}</p>
                             <h3 class="h3 mb-4">{{ $course->name }}</h3>
                             <p class="card-content-paragraph mb-12">{{ $course->short_description }}</p>
+                            <p class="card-content-price">${{ $course->price }}</p>
                         </div>
                     </a>
                 </li>

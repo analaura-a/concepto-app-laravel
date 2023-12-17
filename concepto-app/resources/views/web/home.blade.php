@@ -167,81 +167,110 @@
         <h2 class="h1 h1-bigger mb-56">Descubrí los cursos más populares</h2>
 
         <ul class="container-cards mb-56">
+
             <li class="course-card">
-                <div class="card-img">
-                    <img src="<?= url('assets/png/course-design-systems-figma.png') ?>"
-                        alt="Design systems desde 0 en Figma">
-                </div>
-                <div class="card-content">
-                    <p class="card-content-category mb-8">UX/UI</p>
-                    <h3 class="h3 mb-4">Design systems desde 0 en Figma</h3>
-                    <p class="card-content-paragraph mb-12">Aprendé desde 0 cómo armar un sistema de diseño en Figma, desde
-                        por qué necesitarías uno hasta las mejores prácticas utilizadas por equipos de diseño de todo el
-                        mundo en la actualidad.</p>
-                </div>
+                <a class="anchor-detail" href="<?= route('web.courses.detail', ['id' => 1]) ?>">
+                    <div class="card-img">
+                        <img src="<?= url('assets/png/course-design-systems-figma.png') ?>"
+                            alt="Design systems desde 0 en Figma">
+                    </div>
+                    <div class="card-content">
+                        <p class="card-content-category mb-8">UX/UI</p>
+                        <h3 class="h3 mb-4">Design systems desde 0 en Figma</h3>
+                        <p class="card-content-paragraph mb-12">Aprendé desde 0 cómo armar un sistema de diseño en Figma,
+                            desde
+                            por qué necesitarías uno hasta las mejores prácticas utilizadas por equipos de diseño de todo el
+                            mundo en la actualidad.</p>
+                        <p class="card-content-price">$850000</p>
+                    </div>
+                </a>
             </li>
+
             <li class="course-card">
-                <div class="card-img">
-                    <img src="<?= url('assets/png/course-css-bem.png') ?>"
-                        alt="Cómo organizar tu CSS con la metodología BEM">
-                </div>
-                <div class="card-content">
-                    <p class="card-content-category mb-8">Frontend</p>
-                    <h3 class="h3 mb-4">Cómo organizar tu CSS con la metodología BEM</h3>
-                    <p class="card-content-paragraph mb-12">Aprendé a optimizar tus proyectos frontend con un sistema
-                        robusto, escalable, mantenible en el tiempo y con una serie de reglas fáciles de seguir: BEM (Block
-                        Element Modifier).</p>
-                </div>
+                <a class="anchor-detail" href="<?= route('web.courses.detail', ['id' => 2]) ?>">
+                    <div class="card-img">
+                        <img src="<?= url('assets/png/course-css-bem.png') ?>"
+                            alt="Cómo organizar tu CSS con la metodología BEM">
+                    </div>
+                    <div class="card-content">
+                        <p class="card-content-category mb-8">Frontend</p>
+                        <h3 class="h3 mb-4">Cómo organizar tu CSS con la metodología BEM</h3>
+                        <p class="card-content-paragraph mb-12">Aprendé a optimizar tus proyectos frontend con un sistema
+                            robusto, escalable, mantenible en el tiempo y con una serie de reglas fáciles de seguir: BEM
+                            (Block
+                            Element Modifier).</p>
+                        <p class="card-content-price">$450000</p>
+                    </div>
+                </a>
             </li>
+
             <li class="course-card">
-                <div class="card-img">
-                    <img src="<?= url('assets/png/course-responsive-grid.png') ?>"
-                        alt="Cómo diseñar interfaces web responsive haciendo uso de grillas">
-                </div>
-                <div class="card-content">
-                    <p class="card-content-category mb-8">UX/UI</p>
-                    <h3 class="h3 mb-4">Cómo diseñar interfaces web responsive haciendo uso de grillas</h3>
-                    <p class="card-content-paragraph mb-12">Aprendé todo sobre el uso de las grillas en el diseño de
-                        interfaces web y cómo volver tus diseños responsive.</p>
-                </div>
+                <a class="anchor-detail" href="<?= route('web.courses.detail', ['id' => 3]) ?>">
+                    <div class="card-img">
+                        <img src="<?= url('assets/png/course-responsive-grid.png') ?>"
+                            alt="Cómo diseñar interfaces web responsive haciendo uso de grillas">
+                    </div>
+                    <div class="card-content">
+                        <p class="card-content-category mb-8">UX/UI</p>
+                        <h3 class="h3 mb-4">Cómo diseñar interfaces web responsive haciendo uso de grillas</h3>
+                        <p class="card-content-paragraph mb-12">Aprendé todo sobre el uso de las grillas en el diseño de
+                            interfaces web y cómo volver tus diseños responsive.</p>
+                        <p class="card-content-price">$430000</p>
+                    </div>
+                </a>
             </li>
+
             <li class="course-card">
-                <div class="card-img">
-                    <img src="<?= url('assets/png/course-gsap.png') ?>"
-                        alt="Cómo agregar animaciones a tus webs con GSAP">
-                </div>
-                <div class="card-content">
-                    <p class="card-content-category mb-8">Frontend</p>
-                    <h3 class="h3 mb-4">Cómo agregar animaciones a tus webs con GSAP</h3>
-                    <p class="card-content-paragraph mb-12">Llevá tu desarrollo front-end al siguiente nivel añadiendo
-                        sofisticadas animaciones interactivas a tus proyectos.</p>
-                </div>
+                <a class="anchor-detail" href="<?= route('web.courses.detail', ['id' => 4]) ?>">
+                    <div class="card-img">
+                        <img src="<?= url('assets/png/course-gsap.png') ?>"
+                            alt="Cómo agregar animaciones a tus webs con GSAP">
+                    </div>
+                    <div class="card-content">
+                        <p class="card-content-category mb-8">Frontend</p>
+                        <h3 class="h3 mb-4">Cómo agregar animaciones a tus webs con GSAP</h3>
+                        <p class="card-content-paragraph mb-12">Llevá tu desarrollo front-end al siguiente nivel añadiendo
+                            sofisticadas animaciones interactivas a tus proyectos.</p>
+                        <p class="card-content-price">$450000</p>
+                    </div>
+                </a>
             </li>
+
             <li class="course-card">
-                <div class="card-img">
-                    <img src="<?= url('assets/png/course-accesibility.png') ?>"
-                        alt="Diseñar experiencias digitales siguiendo pautas de accesibilidad">
-                </div>
-                <div class="card-content">
-                    <p class="card-content-category mb-8">UX/UI</p>
-                    <h3 class="h3 mb-4">Diseñar experiencias digitales siguiendo pautas de accesibilidad</h3>
-                    <p class="card-content-paragraph mb-12">Aprendé a aplicar los principios de la accesibilidad web (Web
-                        Content Accessibility Guidelines) en tus diseños y la importancia de considerar la diversidad de
-                        necesidades que tus creaciones cubren.</p>
-                </div>
+                <a class="anchor-detail" href="<?= route('web.courses.detail', ['id' => 5]) ?>">
+                    <div class="card-img">
+                        <img src="<?= url('assets/png/course-accesibility.png') ?>"
+                            alt="Diseñar experiencias digitales siguiendo pautas de accesibilidad">
+                    </div>
+                    <div class="card-content">
+                        <p class="card-content-category mb-8">UX/UI</p>
+                        <h3 class="h3 mb-4">Diseñar experiencias digitales siguiendo pautas de accesibilidad</h3>
+                        <p class="card-content-paragraph mb-12">Aprendé a aplicar los principios de la accesibilidad web
+                            (Web
+                            Content Accessibility Guidelines) en tus diseños y la importancia de considerar la diversidad de
+                            necesidades que tus creaciones cubren.</p>
+                        <p class="card-content-price">$470000</p>
+                    </div>
+                </a>
             </li>
+
             <li class="course-card">
-                <div class="card-img">
-                    <img src="<?= url('assets/png/course-three.png') ?>"
-                        alt="Agregá animaciones 3D a tus webs con Three.js">
-                </div>
-                <div class="card-content">
-                    <p class="card-content-category mb-8">Frontend</p>
-                    <h3 class="h3 mb-4">Agregá animaciones 3D a tus webs con Three.js</h3>
-                    <p class="card-content-paragraph mb-12">Comienza a crear increíbles experiencias 3D y haz que tu sitio
-                        web destaque de la competencia con la librería Three.js</p>
-                </div>
+                <a class="anchor-detail" href="<?= route('web.courses.detail', ['id' => 6]) ?>">
+                    <div class="card-img">
+                        <img src="<?= url('assets/png/course-three.png') ?>"
+                            alt="Agregá animaciones 3D a tus webs con Three.js">
+                    </div>
+                    <div class="card-content">
+                        <p class="card-content-category mb-8">Frontend</p>
+                        <h3 class="h3 mb-4">Agregá animaciones 3D a tus webs con Three.js</h3>
+                        <p class="card-content-paragraph mb-12">Comienza a crear increíbles experiencias 3D y haz que tu
+                            sitio
+                            web destaque de la competencia con la librería Three.js</p>
+                        <p class="card-content-price">$1020000</p>
+                    </div>
+                </a>
             </li>
+
         </ul>
 
         <a href="<?= route('web.courses') ?>" class="main-cta m-0-auto">
