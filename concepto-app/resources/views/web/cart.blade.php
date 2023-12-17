@@ -18,46 +18,31 @@ use Illuminate\Support\Str;
         <div id="cart">
 
             @if (session('cart'))
-
                 <div class="cart-container">
 
                     <div class="cart-courses">
                         <ul class="cart-container-cards mb-56" id="cart-container">
 
-                            <li>
-                                <img class="cart-card-img" src="../assets/png/course-responsive-grid.png"
-                                    alt="Cómo diseñar interfaces web responsive haciendo uso de grillas">
-                                <div class="cart-card-info">
-                                    <div>
-                                        <h2>Cómo diseñar interfaces web responsive haciendo uso de grillas</h2>
-                                        <p>Por Julia Lopez</p>
+                            @foreach (session('cart') as $item)
+                                <li>
+                                    <img class="cart-card-img" src="{{ $item['cover'] }}" alt="{{ $item['name'] }}">
+                                    <div class="cart-card-info">
+                                        <div>
+                                            <h2>{{ $item['name'] }}</h2>
+                                            <p>Por Nombre del profesor</p>
+                                        </div>
+                                        <p>${{ $item['price'] }}</p>
                                     </div>
-                                    <p>$4.300</p>
-                                </div><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"
-                                    viewBox="0 0 48 48" fill="none" id="delete-3" class="svg-medium delete-cart-button">
-                                    <path stroke="#4b5b77" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                        d="M36 15.973c-4.44-.44-8.907-.666-13.36-.666-2.64 0-5.28.133-7.92.4l-2.72.266m7.333-1.346.294-1.747c.213-1.267.373-2.213 2.626-2.213h3.494c2.253 0 2.426 1 2.626 2.226l.294 1.734m4.466 5.56-.866 13.426c-.147 2.094-.267 3.72-3.987 3.72h-8.56c-3.72 0-3.84-1.626-3.987-3.72l-.866-13.426M21.773 30h4.44m-5.546-5.333h6.666">
-                                    </path>
-                                </svg>
-                            </li>
-
-                            <li>
-                                <img class="cart-card-img" src="../assets/png/course-three.png"
-                                    alt="Agregá animaciones 3D a tus webs con Three.js">
-                                <div class="cart-card-info">
-                                    <div>
-                                        <h2>Agregá animaciones 3D a tus webs con Three.js</h2>
-                                        <p>Por Ricardo García</p>
-                                    </div>
-                                    <p>$10.200</p>
-                                </div><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"
-                                    viewBox="0 0 48 48" fill="none" id="delete-6" class="svg-medium delete-cart-button">
-                                    <path stroke="#4b5b77" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                        d="M36 15.973c-4.44-.44-8.907-.666-13.36-.666-2.64 0-5.28.133-7.92.4l-2.72.266m7.333-1.346.294-1.747c.213-1.267.373-2.213 2.626-2.213h3.494c2.253 0 2.426 1 2.626 2.226l.294 1.734m4.466 5.56-.866 13.426c-.147 2.094-.267 3.72-3.987 3.72h-8.56c-3.72 0-3.84-1.626-3.987-3.72l-.866-13.426M21.773 30h4.44m-5.546-5.333h6.666">
-                                    </path>
-                                </svg>
-                            </li>
-
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"
+                                        viewBox="0 0 48 48" fill="none" id="delete-3"
+                                        class="svg-medium delete-cart-button">
+                                        <path stroke="#4b5b77" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="1.5"
+                                            d="M36 15.973c-4.44-.44-8.907-.666-13.36-.666-2.64 0-5.28.133-7.92.4l-2.72.266m7.333-1.346.294-1.747c.213-1.267.373-2.213 2.626-2.213h3.494c2.253 0 2.426 1 2.626 2.226l.294 1.734m4.466 5.56-.866 13.426c-.147 2.094-.267 3.72-3.987 3.72h-8.56c-3.72 0-3.84-1.626-3.987-3.72l-.866-13.426M21.773 30h4.44m-5.546-5.333h6.666">
+                                        </path>
+                                    </svg>
+                                </li>
+                            @endforeach
                         </ul>
                         <a href="<?= route('web.cart.delete') ?>" id="empty-cart">Vaciar carrito</a>
                     </div>
@@ -87,10 +72,9 @@ use Illuminate\Support\Str;
                             </svg>
                         </a>
                     </div>
+
                 </div>
-
             @else
-
                 <div class="empty-cart m-0-auto">
                     <div class="icon-container mb-32 mt-64 m-0-auto"><svg xmlns="http://www.w3.org/2000/svg" width="48"
                             height="48" viewBox="0 0 48 48" fill="none">
@@ -115,7 +99,6 @@ use Illuminate\Support\Str;
                         </svg>
                     </a>
                 </div>
-
             @endif
 
         </div>
