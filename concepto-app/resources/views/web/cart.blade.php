@@ -42,14 +42,16 @@ if (session('cart')) {
                                         </div>
                                         <p>${{ $item['price'] }}</p>
                                     </div>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"
-                                        viewBox="0 0 48 48" fill="none" id="delete-3"
-                                        class="svg-medium delete-cart-button">
-                                        <path stroke="#4b5b77" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="1.5"
-                                            d="M36 15.973c-4.44-.44-8.907-.666-13.36-.666-2.64 0-5.28.133-7.92.4l-2.72.266m7.333-1.346.294-1.747c.213-1.267.373-2.213 2.626-2.213h3.494c2.253 0 2.426 1 2.626 2.226l.294 1.734m4.466 5.56-.866 13.426c-.147 2.094-.267 3.72-3.987 3.72h-8.56c-3.72 0-3.84-1.626-3.987-3.72l-.866-13.426M21.773 30h4.44m-5.546-5.333h6.666">
-                                        </path>
-                                    </svg>
+                                    <a href="{{ route('web.cart.deleteOne', ['id' => $item['id']]) }}">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"
+                                            viewBox="0 0 48 48" fill="none" id="delete-3"
+                                            class="svg-medium delete-cart-button">
+                                            <path stroke="#4b5b77" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="1.5"
+                                                d="M36 15.973c-4.44-.44-8.907-.666-13.36-.666-2.64 0-5.28.133-7.92.4l-2.72.266m7.333-1.346.294-1.747c.213-1.267.373-2.213 2.626-2.213h3.494c2.253 0 2.426 1 2.626 2.226l.294 1.734m4.466 5.56-.866 13.426c-.147 2.094-.267 3.72-3.987 3.72h-8.56c-3.72 0-3.84-1.626-3.987-3.72l-.866-13.426M21.773 30h4.44m-5.546-5.333h6.666">
+                                            </path>
+                                        </svg>
+                                    </a>
                                 </li>
                             @endforeach
                         </ul>

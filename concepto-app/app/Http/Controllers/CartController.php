@@ -24,6 +24,7 @@ class CartController extends Controller
                 ->with('status.message', 'Este curso ya se encuentra en el carrito.');
         } else {
             $cart[$id] = [
+                "id" => $course->course_id,
                 "name" => $course->name,
                 // "teacher" => $course->price,
                 "price" => $course->price,
@@ -38,7 +39,25 @@ class CartController extends Controller
             ->with('status.message', '¡El curso se ha añadido al carrito!');
     }
 
-    public function deleteCart()
+    public function deleteFromCart(int $id)
+    {
+        $cart = session('cart', []);
+
+        foreach ($cart as $index => $course) {
+            if ($course['id'] == $id) {
+                unset($cart[$index]);
+                break;
+            }
+        }
+
+        session(['cart' => array_values($cart)]);
+
+        return redirect()
+            ->back()
+            ->with('status.message', 'El curso se eliminó del carrito correctamente.');
+    }
+
+    public function emptyCart()
     {
         session()->forget('cart');
 

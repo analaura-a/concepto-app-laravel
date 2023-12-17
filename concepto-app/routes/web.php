@@ -51,8 +51,11 @@ Route::middleware('auth')
         Route::get('/carrito/{id}', [\App\Http\Controllers\CartController::class, 'addToCart'])
             ->name('web.cart.add');
 
-        Route::get('/deleteCart', [\App\Http\Controllers\CartController::class, 'deleteCart'])
+        Route::get('/borrar-carrito', [\App\Http\Controllers\CartController::class, 'emptyCart'])
             ->name('web.cart.delete');
+
+        Route::get('/borrar-carrito/{id}', [\App\Http\Controllers\CartController::class, 'deleteFromCart'])
+            ->name('web.cart.deleteOne');
     });
 
 

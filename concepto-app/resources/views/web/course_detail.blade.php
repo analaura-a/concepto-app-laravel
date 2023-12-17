@@ -90,8 +90,8 @@ use Illuminate\Support\Str;
                         </li>
                     </ul>
 
-                    <button class="main-cta" id="mainCTA">
-                        <a href="<?= route('web.cart.add', ['id' => $course->course_id]) ?>" id="main-cta-text">Agregar al carrito</a>
+                    <a href="<?= route('web.cart.add', ['id' => $course->course_id]) ?>" class="main-cta" id="mainCTA">
+                        <p id="main-cta-text">Agregar al carrito</p>
                         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 48 48"
                             fill="none">
                             <path stroke="#fff" stroke-linecap="round" stroke-width="2"
@@ -101,7 +101,7 @@ use Illuminate\Support\Str;
                             <path fill="#fff"
                                 d="M21.878 33.078a1.758 1.758 0 1 1-3.517 0 1.758 1.758 0 0 1 3.517 0ZM32.428 33.078a1.758 1.758 0 1 1-3.517 0 1.758 1.758 0 0 1 3.517 0Z" />
                         </svg>
-                    </button>
+                    </a>
                 </div>
 
                 <div class="pb-40 pt-40 separador">

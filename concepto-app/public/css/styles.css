@@ -1955,6 +1955,7 @@ footer {
     .notification {
         width: fit-content;
         max-width: 400px;
+        padding: 24px;
 
         left: 50%;
         bottom: 4rem;
