@@ -60,7 +60,7 @@ if (session('cart')) {
 
                 @auth
                     <li>
-                        <a href="#" class="navigation-anchor">
+                        <a href="{{ route('auth.web.mycourse') }}" class="navigation-anchor">
                             <p>Mis cursos</p>
                         </a>
                     </li>
@@ -69,12 +69,7 @@ if (session('cart')) {
                             <p>Mi perfil (<?= auth()->user()->email ?>)</p>
                         </a>
                     </li>
-                    <!-- <li>
-                        <form action="{{ route('auth.web.logout.process') }}" method="post">
-                            @csrf
-                            <button type="submit" class="navigation-anchor logout-button">Cerrar sesión</button>
-                        </form>
-                    </li> -->
+                    
                 @endauth
 
             </ul>

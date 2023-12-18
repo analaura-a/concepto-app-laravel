@@ -71,6 +71,11 @@ class AuthController extends Controller
         return view('auth.web.profile');
     }
 
+    public function mycourse()
+    {
+        return view('auth.web.mycourse');
+    }
+
     // Login del Usuario Administrador
     public function loginFormAdmin()
     {

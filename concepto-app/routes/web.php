@@ -45,6 +45,8 @@ Route::post('/registrar', [\App\Http\Controllers\AuthController::class, 'createP
 
 Route::get('/perfil', [\App\Http\Controllers\AuthController::class, 'profile'])->name('auth.web.profile');
 
+Route::get('/mis-cursos', [\App\Http\Controllers\AuthController::class, 'mycourse'])->name('auth.web.mycourse');
+
 Route::middleware('auth')
     ->group(function () {
 

@@ -13,7 +13,7 @@
             <a href="#" class="btn-profile">Modificar mis datos</a>
         </li>
         <li class="li-btn-profile">
-            <a href="#" class="btn-profile">Cursos comprados</a>
+            <a href="{{ route('auth.web.mycourse') }}" class="btn-profile">Cursos comprados</a>
         </li>
         <li class="li-btn-profile">
             <form action="{{ route('auth.web.logout.process') }}" method="post">
