@@ -56,8 +56,6 @@ class MercadoPagoController extends Controller
 
     public function success(Request $request)
     {
-        echo "Success!";
-
         //Guardamos los datos de la transacción
         $collection_id = $request->collection_id;
         $collection_status = $request->collection_status;
@@ -105,18 +103,74 @@ class MercadoPagoController extends Controller
             $purchase_details->user_id = $user;
             $purchase_details->save();
         }
-     
+
+        //Redirigimos
+        return view('web/checkout_success');
     }
 
     public function pending(Request $request)
     {
-        echo "Pending.";
-        dd($request);
+        //Guardamos los datos de la transacción
+        $collection_id = $request->collection_id;
+        $collection_status = $request->collection_status;
+        $payment_id = $request->payment_id;
+        $payment_type = $request->payment_type;
+        $status = $request->status;
+        $merchant_order_id = $request->merchant_order_id;
+        $preference_id = $request->preference_id;
+
+        $transaction = new Transaction();
+        $transaction->collection_id = $collection_id;
+        $transaction->collection_status = $collection_status;
+        $transaction->payment_id = $payment_id;
+        $transaction->payment_type = $payment_type;
+        $transaction->status = $status;
+        $transaction->merchant_order_id = $merchant_order_id;
+        $transaction->preference_id = $preference_id;
+        $transaction->save();
+
+        $transactionID = $transaction->id;
+
+        //Guardamos los datos de la compra
+        $total = 0;
+        foreach (session('cart') as $course) {
+            $total += $course['price'];
+        }
+
+        $user = auth()->user()->id;
+
+        $purchase = new Purchase();
+        $purchase->total_amount = $total;
+        $purchase->status = $status;
+        $purchase->user_id = $user;
+        $purchase->transactions_id = $transactionID;
+        $purchase->save();
+
+        //Redirigimos
+        return view('web/checkout_pending');
     }
 
     public function failure(Request $request)
     {
-        echo "Failure!";
-        dd($request);
+        //Guardamos los datos de la transacción
+        $collection_id = $request->collection_id;
+        $collection_status = $request->collection_status;
+        $payment_id = $request->payment_id;
+        $payment_type = $request->payment_type;
+        $status = $request->status;
+        $merchant_order_id = $request->merchant_order_id;
+        $preference_id = $request->preference_id;
+
+        $transaction = new Transaction();
+        $transaction->collection_id = $collection_id;
+        $transaction->collection_status = $collection_status;
+        $transaction->payment_id = $payment_id;
+        $transaction->payment_type = $payment_type;
+        $transaction->status = $status;
+        $transaction->merchant_order_id = $merchant_order_id;
+        $transaction->preference_id = $preference_id;
+        $transaction->save();
+
+        return view('web/checkout_failure');
     }
 }
