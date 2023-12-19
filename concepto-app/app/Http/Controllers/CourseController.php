@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Purchase_detail;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use Illuminate\Http\Request;
@@ -31,5 +32,19 @@ class CourseController extends Controller
         return view('web/course_detail', [
             'course' => $course,
         ], compact('tagsArray', 'learningsArray'));
+    }
+
+    public function myCourses()
+    {
+        $userId = auth()->user()->id;
+
+        $coursesPurchased = Purchase_detail::select('courses.*')
+            ->join('courses', 'purchase_details.course_id', '=', 'courses.course_id')
+            ->where('purchase_details.user_id', $userId)
+            ->get();
+
+        return view('web.my_courses', [
+            'courses' => $coursesPurchased,
+        ]);
     }
 }

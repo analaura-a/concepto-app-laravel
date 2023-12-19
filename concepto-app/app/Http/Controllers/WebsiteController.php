@@ -15,9 +15,4 @@ class WebsiteController extends Controller
     {
         return view('web.profile');
     }
-
-    public function myCourses()
-    {
-        return view('web.my_courses');
-    }
 }
