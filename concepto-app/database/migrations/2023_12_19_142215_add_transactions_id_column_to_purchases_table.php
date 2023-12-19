@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::table('purchases', function (Blueprint $table) {
             //
+            $table->unsignedBigInteger('transactions_id');
+            $table->foreign('transactions_id')->references('id')->on('transactions');
         });
     }
 
@@ -23,6 +25,7 @@ return new class extends Migration
     {
         Schema::table('purchases', function (Blueprint $table) {
             //
+            $table->dropColumn('transactions_id');
         });
     }
 };
