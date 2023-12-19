@@ -10,7 +10,7 @@
 
     <ul class="content-profile-btn">
     <li class="li-btn-profile">
-            <a href="#" class="btn-profile">Modificar mis datos</a>
+            <a href="{{url('perfil/'. auth()->user()->id. '/editar')}}" class="btn-profile">Modificar mis datos</a>
         </li>
         <li class="li-btn-profile">
             <a href="{{ route('web.my_courses') }}" class="btn-profile">Mis cursos</a>
