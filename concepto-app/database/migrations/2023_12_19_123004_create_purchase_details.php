@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('purchase_details', function (Blueprint $table) {
             $table->id();
-            $table -> unsignedInteger('quantity');
             $table ->unsignedInteger('subtotal');
             $table->timestamps();
         });

@@ -13,7 +13,13 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
+            $table-> unsignedInteger('collection_id');
+            $table-> string('collection_status');
+            $table->unsignedInteger('payment_id');
+            $table-> string('payment_type');
             $table-> string('status');
+            $table-> unsignedInteger('merchant_order_id');
+            $table-> string('preference_id');
             $table->timestamps();
         });
     }
