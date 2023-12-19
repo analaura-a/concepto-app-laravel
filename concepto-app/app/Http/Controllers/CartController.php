@@ -6,10 +6,6 @@ use App\Models\Course;
 
 class CartController extends Controller
 {
-    public function showCart()
-    {
-        return view('web/cart');
-    }
 
     public function addToCart(int $id)
     {
