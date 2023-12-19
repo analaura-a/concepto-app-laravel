@@ -20,6 +20,7 @@ return new class extends Migration
             $table-> string('status');
             $table-> unsignedInteger('merchant_order_id');
             $table-> string('preference_id');
+            $table->date('transactions_date')->default(now());
             $table->timestamps();
         });
     }

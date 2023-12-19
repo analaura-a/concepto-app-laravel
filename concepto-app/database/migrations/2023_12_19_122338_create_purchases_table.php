@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table ->unsignedInteger('total_amount');
             $table-> string('status');
+            $table->date('purchase_date')->default(now());
             $table->timestamps();
         });
     }

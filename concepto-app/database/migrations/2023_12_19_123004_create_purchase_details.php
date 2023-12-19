@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('purchase_details', function (Blueprint $table) {
             $table->id();
             $table ->unsignedInteger('subtotal');
+            $table->date('purchase_date')->default(now());
             $table->timestamps();
         });
     }
