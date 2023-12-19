@@ -43,8 +43,14 @@ Route::get('/registrar', [\App\Http\Controllers\AuthController::class, 'createFo
 
 Route::post('/registrar', [\App\Http\Controllers\AuthController::class, 'createProcessRegister'])->name('auth.web.register');
 
+
+
 Route::middleware('auth')
     ->group(function () {
+        Route::get('/perfil', [\App\Http\Controllers\AuthController::class, 'profile'])->name('auth.web.profile');
+
+        Route::get('/mis-cursos', [\App\Http\Controllers\AuthController::class, 'mycourse'])->name('auth.web.mycourse');
+
         Route::get('/carrito', [\App\Http\Controllers\CartController::class, 'showCart'])
             ->name('web.cart');
 

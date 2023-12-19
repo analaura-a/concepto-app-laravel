@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -16,5 +17,17 @@ class Course extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class, 'category_id', 'category_id');
+    }
+
+    protected function price(): Attribute
+    {
+        return Attribute::make(
+            function($value){
+                return $value / 100;
+            },
+            function($value){
+                return $value * 100;
+            }
+        );
     }
 }
