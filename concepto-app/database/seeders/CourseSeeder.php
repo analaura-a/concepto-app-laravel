@@ -18,6 +18,7 @@ class CourseSeeder extends Seeder
             [
                 'course_id' => 1,
                 'category_id' => 1,
+                'teacher_id'=> 1,
                 'name' => 'Design systems desde 0 en Figma',
                 'cover' => 'https://github.com/analaura-a/pwa-ecommerce/blob/main/assets/png/course-design-systems-figma.png?raw=true',
                 'short_description' => 'Aprendé desde 0 cómo armar un sistema de diseño en Figma, desde por qué necesitarías uno hasta las mejores prácticas utilizadas por equipos de diseño de todo el mundo en la actualidad.',
@@ -37,6 +38,7 @@ class CourseSeeder extends Seeder
             [
                 'course_id' => 2,
                 'category_id' => 2,
+                'teacher_id'=> 2,
                 'name' => 'Cómo organizar tu CSS con la metodología BEM',
                 'cover' => 'https://github.com/analaura-a/pwa-ecommerce/blob/main/assets/png/course-css-bem.png?raw=true',
                 'short_description' => 'Aprendé a optimizar tus proyectos frontend con un sistema robusto, escalable, mantenible en el tiempo y con una serie de reglas fáciles de seguir: BEM (Block Element Modifier).',
@@ -56,6 +58,7 @@ class CourseSeeder extends Seeder
             [
                 'course_id' => 3,
                 'category_id' => 1,
+                'teacher_id'=> 1,
                 'name' => 'Cómo diseñar interfaces web responsive haciendo uso de grillas',
                 'cover' => 'https://github.com/analaura-a/pwa-ecommerce/blob/main/assets/png/course-responsive-grid.png?raw=true',
                 'short_description' => 'Aprendé todo sobre el uso de las grillas en el diseño de interfaces web y cómo volver tus diseños responsive.',
@@ -75,6 +78,7 @@ class CourseSeeder extends Seeder
             [
                 'course_id' => 4,
                 'category_id' => 2,
+                'teacher_id'=> 2,
                 'name' => 'Cómo agregar animaciones a tus webs con GSAP',
                 'cover' => 'https://blog.skcript.com/svrmedia/heroes/web-animation-with-gsap.png',
                 'short_description' => 'Llevá tu desarrollo front-end al siguiente nivel añadiendo sofisticadas animaciones interactivas a tus proyectos.',
@@ -94,6 +98,7 @@ class CourseSeeder extends Seeder
             [
                 'course_id' => 5,
                 'category_id' => 1,
+                'teacher_id'=> 3,
                 'name' => 'Diseñar experiencias digitales siguiendo pautas de accesibilidad',
                 'cover' => 'https://github.com/analaura-a/pwa-ecommerce/blob/main/assets/png/course-accesibility.png?raw=true',
                 'short_description' => 'Aprendé a aplicar los principios de la accesibilidad web (Web Content Accessibility Guidelines) en tus diseños y la importancia de considerar la diversidad de necesidades que tus creaciones cubren.',
@@ -113,6 +118,7 @@ class CourseSeeder extends Seeder
             [
                 'course_id' => 6,
                 'category_id' => 2,
+                'teacher_id'=> 2,
                 'name' => 'Agregá animaciones 3D a tus webs con Three.js',
                 'cover' => 'https://github.com/analaura-a/pwa-ecommerce/blob/main/assets/png/course-three.png?raw=true',
                 'short_description' => 'Aprendé a crear sitios web 3D envolventes y creativos con la librería Three.js.',

@@ -14,10 +14,17 @@ class Course extends Model
 
     protected $primaryKey = "course_id";
 
+
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class, 'category_id', 'category_id');
     }
+
+    public function teacher(): BelongsTo
+    {
+        return $this->belongsTo(Teacher::class, 'teacher_id', 'id');
+    }
+    
 
     protected function price(): Attribute
     {

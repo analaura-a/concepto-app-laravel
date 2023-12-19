@@ -33,10 +33,10 @@ use Illuminate\Support\Str;
                 <h1 class="h1 h1-bigger mb-40" id="course-name">{{ $course->name }}</h1>
 
                 <div class="course-professor mb-40">
-                    <img id="course-professor-photo">
+                    <img id="course-professor-photo" src="<?= url('assets/'. $course->teacher->photo) ?>" >
                     <div class="course-professor-info">
-                        <p id="course-professor-name">Nombre del profesor</p>
-                        <p id="course-professor-job">Profesión</p>
+                        <p id="course-professor-name">{{ $course->teacher->name }}</p>
+                        <p id="course-professor-job">{{ $course->teacher->profession }}</p>
                     </div>
                 </div>
 
