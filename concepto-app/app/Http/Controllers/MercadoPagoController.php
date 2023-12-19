@@ -12,38 +12,43 @@ class MercadoPagoController extends Controller
     {
         $courses = session()->get('cart', []);
 
-        $items = [];
-        $totalPrice = 0;
+        if (empty($courses)) {
+            return view('web/cart');
+        } else {
 
-        foreach ($courses as $course) {
+            $items = [];
+            $totalPrice = 0;
 
-            $items[] = [
-                'title'         => $course["name"],
-                'quantity'      => 1,
-                'unit_price'    => $course["price"],
-                'currency_id'   => 'ARS',
-            ];
+            foreach ($courses as $course) {
 
-            $totalPrice += $course["price"];
+                $items[] = [
+                    'title'         => $course["name"],
+                    'quantity'      => 1,
+                    'unit_price'    => $course["price"],
+                    'currency_id'   => 'ARS',
+                ];
+
+                $totalPrice += $course["price"];
+            }
+
+            MercadoPagoConfig::setAccessToken(config('mercadopago.accessToken'));
+
+            $client = new PreferenceClient();
+            $preference = $client->create([
+                'items' => $items,
+                'back_urls' => [
+                    'success' => route('web.checkout.success'),
+                    'failure' => route('web.checkout.failure'),
+                ],
+            ]);
+
+            return view('web/cart', [
+                'courses' => $courses,
+                'totalPrice' => $totalPrice,
+                'preference' => $preference,
+                'mpPublicKey' => config('mercadopago.publicKey'),
+            ]);
         }
-
-        MercadoPagoConfig::setAccessToken(config('mercadopago.accessToken'));
-
-        $client = new PreferenceClient();
-        $preference = $client->create([
-            'items' => $items,
-            'back_urls' => [
-                'success' => route('web.checkout.success'),
-                'failure' => route('web.checkout.failure'),
-            ],
-        ]);
-
-        return view('web/cart', [
-            'courses' => $courses,
-            'totalPrice' => $totalPrice,
-            'preference' => $preference,
-            'mpPublicKey' => config('mercadopago.publicKey'),
-        ]);
     }
 
     public function success(Request $request)
