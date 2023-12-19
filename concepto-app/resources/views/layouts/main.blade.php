@@ -60,12 +60,12 @@ if (session('cart')) {
 
                 @auth
                     <li>
-                        <a href="{{ route('auth.web.mycourse') }}" class="navigation-anchor">
+                        <a href="{{ route('web.my_courses') }}" class="navigation-anchor">
                             <p>Mis cursos</p>
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('auth.web.profile') }}" class="navigation-anchor">
+                        <a href="{{ route('web.profile') }}" class="navigation-anchor">
                             <p>Mi perfil (<?= auth()->user()->email ?>)</p>
                         </a>
                     </li>
