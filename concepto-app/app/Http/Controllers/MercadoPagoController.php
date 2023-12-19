@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Purchase;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use MercadoPago\MercadoPagoConfig;
@@ -75,6 +76,25 @@ class MercadoPagoController extends Controller
         $transaction->preference_id = $preference_id;
         $transaction->save();
 
+        $transactionID = $transaction->id;
+
+        //Guardamos los datos de la compra
+        $cart = session()->get('cart', []);
+
+        $total = 0;
+        foreach (session('cart') as $course) {
+            $total += $course['price'];
+        }
+
+        $user = auth()->user()->id;
+
+        $purchase = new Purchase();
+        $purchase->total_amount = $total;
+        $purchase->status = $status;
+        //3 campos de fecha
+        $purchase->user_id = $user;
+        $purchase->transactions_id = $transactionID;
+        $purchase->save();
     }
 
     public function pending(Request $request)
