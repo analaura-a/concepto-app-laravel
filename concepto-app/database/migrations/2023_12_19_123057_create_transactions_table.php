@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table-> unsignedInteger('collection_id');
+            $table-> unsignedBigInteger('collection_id');
             $table-> string('collection_status');
-            $table->unsignedInteger('payment_id');
+            $table->unsignedBigInteger('payment_id');
             $table-> string('payment_type');
             $table-> string('status');
-            $table-> unsignedInteger('merchant_order_id');
+            $table-> unsignedBigInteger('merchant_order_id');
             $table-> string('preference_id');
             $table->date('transactions_date')->default(now());
             $table->timestamps();

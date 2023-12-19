@@ -66,6 +66,9 @@ Route::middleware('auth')
         Route::get('/checkout/exito', [\App\Http\Controllers\MercadoPagoController::class, 'success'])
             ->name('web.checkout.success');
 
+        Route::get('/checkout/pending', [\App\Http\Controllers\MercadoPagoController::class, 'pending'])
+            ->name('web.checkout.pending');
+
         Route::get('/checkout/error', [\App\Http\Controllers\MercadoPagoController::class, 'failure'])
             ->name('web.checkout.failure');
     });
