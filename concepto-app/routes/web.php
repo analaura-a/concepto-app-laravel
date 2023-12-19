@@ -62,6 +62,12 @@ Route::middleware('auth')
 
         Route::get('/borrar-carrito/{id}', [\App\Http\Controllers\CartController::class, 'deleteFromCart'])
             ->name('web.cart.deleteOne');
+
+        Route::get('/checkout/exito', [\App\Http\Controllers\MercadoPagoController::class, 'success'])
+            ->name('web.checkout.success');
+
+        Route::get('/checkout/error', [\App\Http\Controllers\MercadoPagoController::class, 'failure'])
+            ->name('web.checkout.failure');
     });
 
 

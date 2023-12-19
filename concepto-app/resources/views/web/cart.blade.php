@@ -73,7 +73,8 @@ if (session('cart')) {
                         <div class="total flex-total pt-32 pb-32">
                             <p>Total a pagar</p>
                             <p id="total">${{ $total }}</p>
-                        </div><a class="main-cta" href="#">
+                        </div>
+                        {{-- <a class="main-cta" href="#">
                             <p>Comprar ahora</p>
                             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"
                                 fill="none">
@@ -81,39 +82,49 @@ if (session('cart')) {
                                     d="M28.11 15.264a.9.9 0 1 0-1.273 1.272l6.557 6.558H12.9a.9.9 0 1 0 0 1.8h20.493l-6.556 6.556a.9.9 0 0 0 1.272 1.273l8.094-8.093a.9.9 0 0 0 0-1.273l-8.094-8.093Z">
                                 </path>
                             </svg>
-                        </a>
+                        </a> --}}
+                        <div id="checkout"></div>
                     </div>
+                </div>
 
-                </div>
-            @else
-                <div class="empty-cart m-0-auto">
-                    <div class="icon-container mb-32 mt-64 m-0-auto"><svg xmlns="http://www.w3.org/2000/svg" width="48"
-                            height="48" viewBox="0 0 48 48" fill="none">
-                            <path stroke="#a6b5ed" stroke-linecap="round" stroke-width="2"
-                                d="m7 8.65 2.8.56a2 2 0 0 1 1.597 1.762l.363 3.628m0 0 1.829 15.238a2 2 0 0 0 1.985 1.762h18.443a3.5 3.5 0 0 0 3.396-2.651l2.873-11.491a2.3 2.3 0 0 0-2.232-2.858H11.76Z">
-                            </path>
-                            <path stroke="#a6b5ed" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M18.9 26.5h6.8"></path>
-                            <path fill="#a6b5ed"
-                                d="M20.6 37.55a2.55 2.55 0 1 1-5.1 0 2.55 2.55 0 0 1 5.1 0ZM35.9 37.55a2.55 2.55 0 1 1-5.1 0 2.55 2.55 0 0 1 5.1 0Z">
-                            </path>
-                        </svg></div>
-                    <h2 class="h2 mb-16">¡Ups! Parece que todavía no agregaste nada</h2>
-                    <p class="paragraph mb-32">Date una vuelta por nuestro catálogo y elegí tus cursos favoritos.</p><a
-                        class="main-cta m-0-auto mb-100" href="<?= route('web.courses') ?>">
-                        <p>Explorar</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48"
-                            fill="none">
-                            <path fill="#fff"
-                                d="M28.11 15.264a.9.9 0 1 0-1.273 1.272l6.557 6.558H12.9a.9.9 0 1 0 0 1.8h20.493l-6.556 6.556a.9.9 0 0 0 1.272 1.273l8.094-8.093a.9.9 0 0 0 0-1.273l-8.094-8.093Z">
-                            </path>
-                        </svg>
-                    </a>
-                </div>
-            @endif
+        </div>
+    @else
+        <div class="empty-cart m-0-auto">
+            <div class="icon-container mb-32 mt-64 m-0-auto"><svg xmlns="http://www.w3.org/2000/svg" width="48"
+                    height="48" viewBox="0 0 48 48" fill="none">
+                    <path stroke="#a6b5ed" stroke-linecap="round" stroke-width="2"
+                        d="m7 8.65 2.8.56a2 2 0 0 1 1.597 1.762l.363 3.628m0 0 1.829 15.238a2 2 0 0 0 1.985 1.762h18.443a3.5 3.5 0 0 0 3.396-2.651l2.873-11.491a2.3 2.3 0 0 0-2.232-2.858H11.76Z">
+                    </path>
+                    <path stroke="#a6b5ed" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M18.9 26.5h6.8"></path>
+                    <path fill="#a6b5ed"
+                        d="M20.6 37.55a2.55 2.55 0 1 1-5.1 0 2.55 2.55 0 0 1 5.1 0ZM35.9 37.55a2.55 2.55 0 1 1-5.1 0 2.55 2.55 0 0 1 5.1 0Z">
+                    </path>
+                </svg></div>
+            <h2 class="h2 mb-16">¡Ups! Parece que todavía no agregaste nada</h2>
+            <p class="paragraph mb-32">Date una vuelta por nuestro catálogo y elegí tus cursos favoritos.</p><a
+                class="main-cta m-0-auto mb-100" href="<?= route('web.courses') ?>">
+                <p>Explorar</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                    <path fill="#fff"
+                        d="M28.11 15.264a.9.9 0 1 0-1.273 1.272l6.557 6.558H12.9a.9.9 0 1 0 0 1.8h20.493l-6.556 6.556a.9.9 0 0 0 1.272 1.273l8.094-8.093a.9.9 0 0 0 0-1.273l-8.094-8.093Z">
+                    </path>
+                </svg>
+            </a>
+        </div>
+        @endif
 
         </div>
 
     </section>
 
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script>
+        const mp = new MercadoPago('<?= $mpPublicKey ?>');
+        const bricksBuilder = mp.bricks().create('wallet', 'checkout', {
+            initialization: {
+                preferenceId: '<?= $preference->id ?>',
+            }
+        });
+    </script>
 @endsection
