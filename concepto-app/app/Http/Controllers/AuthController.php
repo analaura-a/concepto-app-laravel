@@ -84,7 +84,7 @@ class AuthController extends Controller
         $user->update($data);
 
         return redirect ('/perfil')
-        ->with('status.message', 'se adito con exito el email');
+        ->with('status.message', 'Se editó con éxito tu correo electrónico.');
 
     }
 
