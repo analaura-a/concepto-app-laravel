@@ -1988,3 +1988,35 @@ footer {
     margin: auto;
     padding-top: 15px;
 }
+.profile{
+    margin-bottom: 20px;
+    width: 70%;
+    text-align: center;
+}
+
+/* Boton cerrar sesion */
+.content-profile-btn{
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+.li-btn-profile{
+    padding: 20px;
+}
+.btn-profile{
+    padding: 10px 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    color: var(--color-gray-100);
+    border: 1px solid var(--color-primary-600);
+    background-color: var(--color-primary-600);
+
+}
+.btn-logout{
+    border: 1px solid red;
+    padding: 10px 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    background: red;
+    color: var(--color-gray-100);
+}

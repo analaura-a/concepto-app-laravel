@@ -66,6 +66,16 @@ class AuthController extends Controller
             ->with('status.message', 'Creaste tu cuenta con éxito. Inicia sesión para ingresar.');
     }
 
+    public function profile()
+    {
+        return view('auth.web.profile');
+    }
+
+    public function mycourse()
+    {
+        return view('auth.web.mycourse');
+    }
+
     // Login del Usuario Administrador
     public function loginFormAdmin()
     {
