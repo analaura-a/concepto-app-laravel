@@ -46,6 +46,22 @@ class TeacherSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            [
+                'id' => 5,
+                'name' => 'Sebastian Tunnell',
+                'profession' => 'Machine Learning Engineer en Datademia',
+                'photo' =>'png/teacher-sebastian.png',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'id' => 6,
+                'name' => 'Alan Lerner',
+                'profession' => 'Director de Asesoría en KPMG Argentina',
+                'photo' =>'png/teacher-alan.png',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
 
         ]);
     }
