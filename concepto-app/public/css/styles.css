@@ -1857,56 +1857,6 @@ footer {
 
 
 
-/* ADMIN */
-.admin-shortcut {
-    display: grid;
-    place-items: center;
-    max-width: 400px;
-    height: 400px;
-    background-color: var(--color-background-600);
-    border-radius: 2rem;
-    transition: all 240ms ease-out;
-}
-
-.admin-shortcut:hover {
-    background-color: var(--color-primary-300);
-}
-
-.admin-shortcut p {
-    width: 80%;
-    font-family: var(--switzer-font);
-    font-size: var(--font-32px);
-    font-weight: var(--switzer-semibold);
-    color: var(--color-gray-1000);
-    line-height: 120%;
-    text-align: center;
-}
-
-.title-with-button {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.logout-button {
-    background: none;
-    border: none;
-    outline: none;
-    -webkit-appearance: unset !important;
-}
-
-@media only screen and (min-width: 992px) {
-
-    .title-with-button {
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 1rem;
-    }
-
-}
-
-
-
 /* STATUS PAGE */
 .status .empty-cart {
     padding: 20px 0;
@@ -1921,6 +1871,7 @@ footer {
         width: 50%;
         padding: 40px 0;
     }
+
 }
 
 
@@ -1981,11 +1932,9 @@ footer {
     }
 }
 
-/* @media only screen and (min-width: 600px) {}
-@media only screen and (min-width: 992px) {}
-@media only screen and (min-width: 1200px) {} */
 
-/* FORM REGISTER */
+
+/* Página de registro */
 .btn-register {
     display: flex;
     justify-content: center;
@@ -2045,3 +1994,70 @@ footer {
 .btn-logout:hover {
     cursor: pointer;
 }
+
+
+
+/* ADMIN */
+.shortcuts-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+}
+
+.admin-shortcut {
+    display: grid;
+    place-items: center;
+    max-width: 400px;
+    height: 400px;
+    background-color: var(--color-background-600);
+    border-radius: 2rem;
+    transition: all 240ms ease-out;
+}
+
+.admin-shortcut:hover {
+    background-color: var(--color-primary-300);
+}
+
+.admin-shortcut p {
+    width: 80%;
+    font-family: var(--switzer-font);
+    font-size: var(--font-32px);
+    font-weight: var(--switzer-semibold);
+    color: var(--color-gray-1000);
+    line-height: 120%;
+    text-align: center;
+}
+
+.title-with-button {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    outline: none;
+    -webkit-appearance: unset !important;
+}
+
+@media only screen and (min-width: 992px) {
+
+    .title-with-button {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .shortcuts-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+
+}
+
+/* @media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 1200px) {} */
