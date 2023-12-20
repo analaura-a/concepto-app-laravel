@@ -105,6 +105,9 @@ class MercadoPagoController extends Controller
             $purchase_details->save();
         }
 
+        //Vaciamos el carrito
+        session()->forget('cart');
+
         //Redirigimos
         return redirect()
             ->route('web.checkout.success');
@@ -152,6 +155,9 @@ class MercadoPagoController extends Controller
         $purchase->user_id = $user;
         $purchase->transactions_id = $transactionID;
         $purchase->save();
+
+        //Vaciamos el carrito
+        session()->forget('cart');
 
         //Redirigimos
         return redirect()

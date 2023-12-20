@@ -47,6 +47,7 @@
                             <div class="card-content">
                                 <h3 class="h3 mb-4">{{ $course->name }}</h3>
                                 <p class="card-content-paragraph mb-12">{{ $course->short_description }}</p>
+                                <p class="paragraph fs-6 text-secondary">Comprado el {{ $course->purchase_date }}</p>
                             </div>
                         </a>
                     </li>
