@@ -69,23 +69,21 @@ class AuthController extends Controller
     // editar los datos del usuario autenticado 
     public function editForm(int $id)
     {
-      return view('auth.web.edit',[
-        'user' => User::findOrFail($id),
-      ]);
-
+        return view('auth.web.edit', [
+            'user' => User::findOrFail($id),
+        ]);
     }
 
     public function editProcess(int $id, Request $request)
     {
-        $user= User::findOrFail($id);
-    
+        $user = User::findOrFail($id);
+
         $data = $request->except('_token');
 
         $user->update($data);
 
-        return redirect ('/perfil')
-        ->with('status.message', 'Se editó con éxito tu correo electrónico.');
-
+        return redirect('/perfil')
+            ->with('status.message', 'Se editó con éxito tu correo electrónico.');
     }
 
     // Login del Usuario Administrador
@@ -136,7 +134,8 @@ class AuthController extends Controller
     //Funciones para la lista de usuarios autenticados para el usuario admin
     public function userList()
     {
-        $users = User::all();
+        $users = User::where('role', '!=', 'Admin')->get();
+
         return view('admin.user.userList', [
             'users' => $users,
         ]);
