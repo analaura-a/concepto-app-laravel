@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
+use App\Models\Purchase_detail;
 
 class CartController extends Controller
 {
@@ -10,29 +11,41 @@ class CartController extends Controller
     public function addToCart(int $id)
     {
         $course = Course::findOrFail($id);
+        $user = auth()->user()->id;
 
-        $cart = session()->get('cart', []);
+        $userAlreadyPurchased = Purchase_detail::where('user_id', $user)
+            ->where('course_id', $id)
+            ->exists();
 
-        if (isset($cart[$id])) {
+        //Verificamos si el curso ya fue comprado por el usuario
+        if ($userAlreadyPurchased) {
+            return redirect()
+                ->back()
+                ->with('status.message', 'Ya has adquirido este curso.');
+        } else {
+            //Verificamos si el curso ya se encuentra en el carrito
+            $cart = session()->get('cart', []);
+
+            if (isset($cart[$id])) {
+                return redirect()
+                    ->back()
+                    ->with('status.message', 'Este curso ya se encuentra en el carrito.');
+            } else {
+                $cart[$id] = [
+                    "id" => $course->course_id,
+                    "name" => $course->name,
+                    "teacher" => $course->teacher->name,
+                    "price" => $course->price,
+                    "cover" => $course->cover,
+                ];
+            }
+
+            session()->put('cart', $cart);
 
             return redirect()
                 ->back()
-                ->with('status.message', 'Este curso ya se encuentra en el carrito.');
-        } else {
-            $cart[$id] = [
-                "id" => $course->course_id,
-                "name" => $course->name,
-                // "teacher" => $course->price,
-                "price" => $course->price,
-                "cover" => $course->cover,
-            ];
+                ->with('status.message', '¡El curso se ha añadido al carrito!');
         }
-
-        session()->put('cart', $cart);
-
-        return redirect()
-            ->back()
-            ->with('status.message', '¡El curso se ha añadido al carrito!');
     }
 
     public function deleteFromCart(int $id)

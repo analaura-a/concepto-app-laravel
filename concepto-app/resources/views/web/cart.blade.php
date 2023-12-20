@@ -45,7 +45,7 @@ if (empty($cart)) {
                                     <div class="cart-card-info">
                                         <div>
                                             <h2>{{ $item['name'] }}</h2>
-                                            <p>Por Nombre del profesor</p>
+                                            <p>Por {{ $item['teacher'] }}</p>
                                         </div>
                                         <p>${{ $item['price'] }}</p>
                                     </div>
