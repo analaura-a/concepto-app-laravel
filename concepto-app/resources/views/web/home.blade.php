@@ -274,7 +274,7 @@
         </ul>
 
         <a href="<?= route('web.courses') ?>" class="main-cta m-0-auto">
-            <p>Accedé al catálogo completo</p>
+            <p>Explorar todos</p>
 
             <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 48 48" fill="none">
                 <path fill="#fff"
@@ -282,6 +282,33 @@
             </svg>
         </a>
 
+    </section>
+
+    <section class="container w-100 download mb-32 mb-d-200">
+        <div class="download-content">
+            <p class="subtitle subtitle-left-line mb-12">Aprendé desde donde quieras</p>
+            <h2 class="h1 h1-bigger mb-16">Descargá nuestra app</h2>
+
+            <p class="paragraph mb-32">Accedé a la enorme variedad de cursos y tutoriales de la plataforma desde
+                cualquier dispositivo, ya
+                sea
+                Android o IOS.</p>
+
+            <button class="main-cta">
+                <p>Descargar</p>
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewbox="0 0 48 48"
+                    fill="none">
+                    <path stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M29.84 19.603c4.729.48 6.66 3.35 6.66 9.633v.202c0 6.934-2.352 9.711-8.224 9.711h-8.552c-5.873 0-8.224-2.777-8.224-9.711v-.202c0-6.236 1.905-9.106 6.555-9.618M24 9v20" />
+                    <path stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="m28.407 25.422-4.4 5.197-4.402-5.197" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="download-img">
+            <img src="<?= url('assets/png/concepto-mobile-app.png') ?>" alt="Aplicación mobile de Concepto">
+        </div>
     </section>
 
 @endsection
