@@ -239,7 +239,7 @@ body {
 }
 
 .mb-4 {
-    margin-bottom: 4px!important;
+    margin-bottom: 4px !important;
 }
 
 .mb-8 {
@@ -2005,22 +2005,25 @@ footer {
     margin: auto;
     padding-top: 15px;
 }
-.profile{
+
+.profile {
     margin-bottom: 20px;
     width: 70%;
     text-align: center;
 }
 
 /* Boton cerrar sesion */
-.content-profile-btn{
+.content-profile-btn {
     margin: auto;
     width: 50%;
     text-align: center;
 }
-.li-btn-profile{
+
+.li-btn-profile {
     padding: 20px;
 }
-.btn-profile{
+
+.btn-profile {
     padding: 10px 20px;
     border-radius: 15px;
     margin-top: 20px;
@@ -2029,11 +2032,16 @@ footer {
     background-color: var(--color-primary-600);
 
 }
-.btn-logout{
-    border: 1px solid red;
+
+.btn-logout {
+    border: 1px solid hsl(0 67% 43% / 1);
     padding: 10px 20px;
     border-radius: 15px;
     margin-top: 20px;
-    background: red;
+    background: hsl(0 67% 43% / 1);
     color: var(--color-gray-100);
+}
+
+.btn-logout:hover {
+    cursor: pointer;
 }
