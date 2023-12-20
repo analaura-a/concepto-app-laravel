@@ -66,6 +66,28 @@ class AuthController extends Controller
             ->with('status.message', 'Creaste tu cuenta con éxito. Inicia sesión para ingresar.');
     }
 
+    // editar los datos del usuario autenticado 
+    public function editForm(int $id)
+    {
+      return view('auth.web.edit',[
+        'user' => User::findOrFail($id),
+      ]);
+
+    }
+
+    public function editProcess(int $id, Request $request)
+    {
+        $user= User::findOrFail($id);
+    
+        $data = $request->except('_token');
+
+        $user->update($data);
+
+        return redirect ('/perfil')
+        ->with('status.message', 'Se editó con éxito tu correo electrónico.');
+
+    }
+
     // Login del Usuario Administrador
     public function loginFormAdmin()
     {
