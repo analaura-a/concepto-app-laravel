@@ -1996,7 +1996,6 @@ footer {
 /* estilos de detalle de usuario */
 .service-info {
     border: 1px solid #d9def3;
-    text-align: center;
     padding: 20px 40px;
     border-radius: 20px;
 }

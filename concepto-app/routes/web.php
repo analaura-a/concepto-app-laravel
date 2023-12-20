@@ -92,11 +92,11 @@ Route::middleware(['auth', 'userAdmin:Admin'])
     ->group(function () {
         Route::get('/admin', [\App\Http\Controllers\AdminController::class, 'index'])->name('admin.home');
 
-        Route::get('/admin/blog', [\App\Http\Controllers\BlogController::class, 'admin'])->name('admin.blog');
-
-        Route::get('/admin/usuarios/{id}', [\App\Http\Controllers\AuthController::class, 'viewDetailUser'])->name('admin.user');
-
         Route::get('/admin/usuarios', [\App\Http\Controllers\AuthController::class, 'userList'])->name('admin.user');
+
+        Route::get('/admin/usuarios/{id}', [\App\Http\Controllers\AuthController::class, 'viewDetailUser'])->name('admin.user.detail');
+
+        Route::get('/admin/blog', [\App\Http\Controllers\BlogController::class, 'admin'])->name('admin.blog');
 
         Route::get('/admin/blog/nueva-entrada', [\App\Http\Controllers\BlogController::class, 'createForm'])->name('admin.blog.create.form');
 

@@ -29,7 +29,8 @@
                             <td>{{ $user->email }}</td>
 
                             <td>
-                                <a href="{{ url('/admin/usuarios/' . $user->id) }}" class="btn btn-primary">Ver detalle</a>
+                                <a href="{{ route('admin.user.detail', ['id' => $user->id]) }}" class="btn btn-primary">Ver
+                                    detalle</a>
                             </td>
                         </tr>
                     @endforeach

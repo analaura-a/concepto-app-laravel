@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Purchase_detail;
 use Illuminate\Http\Request;
 
 class AuthController extends Controller
@@ -143,8 +144,15 @@ class AuthController extends Controller
 
     public function viewDetailUser(int $id)
     {
+        $coursesPurchased = Purchase_detail::select('courses.*', 'purchase_details.purchase_date')
+            ->join('courses', 'purchase_details.course_id', '=', 'courses.course_id')
+            ->where('purchase_details.user_id', $id)
+            ->orderBy('purchase_details.purchase_date', 'desc')
+            ->get();
+
         return view('admin.user.viewDetail', [
             'user' => User::find($id),
+            'courses' => $coursesPurchased,
         ]);
     }
 }
