@@ -40,8 +40,9 @@ class MercadoPagoController extends Controller
             $preference = $client->create([
                 'items' => $items,
                 'back_urls' => [
-                    'success' => route('web.checkout.success'),
-                    'failure' => route('web.checkout.failure'),
+                    'success' => route('web.checkout.success.process'),
+                    'pending' => route('web.checkout.pending.process'),
+                    'failure' => route('web.checkout.failure.process'),
                 ],
             ]);
 
@@ -105,6 +106,12 @@ class MercadoPagoController extends Controller
         }
 
         //Redirigimos
+        return redirect()
+            ->route('web.checkout.success');
+    }
+
+    public function successPage()
+    {
         return view('web/checkout_success');
     }
 
@@ -147,6 +154,12 @@ class MercadoPagoController extends Controller
         $purchase->save();
 
         //Redirigimos
+        return redirect()
+            ->route('web.checkout.pending');
+    }
+
+    public function pendingPage()
+    {
         return view('web/checkout_pending');
     }
 
@@ -171,6 +184,12 @@ class MercadoPagoController extends Controller
         $transaction->preference_id = $preference_id;
         $transaction->save();
 
+        return redirect()
+            ->route('web.checkout.failure');
+    }
+
+    public function failurePage()
+    {
         return view('web/checkout_failure');
     }
 }

@@ -67,13 +67,22 @@ Route::middleware('auth')
         Route::get('/borrar-carrito/{id}', [\App\Http\Controllers\CartController::class, 'deleteFromCart'])
             ->name('web.cart.deleteOne');
 
-        Route::get('/checkout/exito', [\App\Http\Controllers\MercadoPagoController::class, 'success'])
+        Route::get('/checkout/procesando/exito', [\App\Http\Controllers\MercadoPagoController::class, 'success'])
+            ->name('web.checkout.success.process');
+
+        Route::get('/checkout/exito', [\App\Http\Controllers\MercadoPagoController::class, 'successPage'])
             ->name('web.checkout.success');
 
-        Route::get('/checkout/pending', [\App\Http\Controllers\MercadoPagoController::class, 'pending'])
+        Route::get('/checkout/procesando/pending', [\App\Http\Controllers\MercadoPagoController::class, 'pending'])
+            ->name('web.checkout.pending.process');
+
+        Route::get('/checkout/pending', [\App\Http\Controllers\MercadoPagoController::class, 'pendingPage'])
             ->name('web.checkout.pending');
 
-        Route::get('/checkout/error', [\App\Http\Controllers\MercadoPagoController::class, 'failure'])
+        Route::get('/checkout/procesando/error', [\App\Http\Controllers\MercadoPagoController::class, 'failure'])
+            ->name('web.checkout.failure.process');
+
+        Route::get('/checkoute/error', [\App\Http\Controllers\MercadoPagoController::class, 'failurePage'])
             ->name('web.checkout.failure');
     });
 
