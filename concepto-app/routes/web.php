@@ -49,12 +49,11 @@ Route::middleware('auth')
     ->group(function () {
         Route::get('/perfil', [\App\Http\Controllers\WebsiteController::class, 'profile'])->name('web.profile');
 
-        Route::get('/mis-cursos', [\App\Http\Controllers\CourseController::class, 'myCourses'])->name('web.my_courses');
         Route::get('/perfil/{id}/editar', [\App\Http\Controllers\AuthController::class, 'editForm'])->name('auth.web.edit.form');
 
         Route::post('/perfil/{id}/editar', [\App\Http\Controllers\AuthController::class, 'editProcess'])->name('auth.web.edit.process');
 
-        Route::get('/mis-cursos', [\App\Http\Controllers\WebsiteController::class, 'myCourses'])->name('web.my_courses');
+        Route::get('/mis-cursos', [\App\Http\Controllers\CourseController::class, 'myCourses'])->name('web.my_courses');
 
         Route::get('/carrito', [\App\Http\Controllers\MercadoPagoController::class, 'showCart'])
             ->name('web.cart');
