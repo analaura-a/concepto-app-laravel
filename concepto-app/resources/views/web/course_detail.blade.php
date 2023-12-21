@@ -25,7 +25,7 @@ use Illuminate\Support\Str;
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank" class="mb-48">
                 <div id="course-image" style="
     background-image: linear-gradient(180deg, rgba(42, 43, 46, 0.51) 73.31%, rgba(60, 61, 66, 0.37) 100%),
-    url(<?= url('assets/'. $course->cover) ?>); background-repeat: no-repeat; background-position: center; background-size: cover; ">
+    url(<?= url('assets/' . $course->cover) ?>); background-repeat: no-repeat; background-position: center; background-size: cover; ">
                 </div>
             </a>
 
