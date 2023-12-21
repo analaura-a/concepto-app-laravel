@@ -25,7 +25,6 @@ return new class extends Migration
             $table->text('requirements');
             $table->string('tags');
             $table->string('learnings');
-            $table->boolean('trending');
             $table->timestamps();
         });
     }
