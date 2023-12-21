@@ -79,6 +79,8 @@ class AuthController extends Controller
     {
         $user = User::findOrFail($id);
 
+        $request->validate(User::CREATE_RULES_EDIT, User::CREATE_MESSAGES_EDIT);
+
         $data = $request->except('_token');
 
         $user->update($data);

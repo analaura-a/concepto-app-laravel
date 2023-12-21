@@ -17,9 +17,13 @@ use Illuminate\Support\ViewErrorBag;
         @csrf
 
         <div class="form-input">
-            <label for="email">Correo electrónico<span class="primary-color-text">*</span></label>
-            <input type="text" id="email" name="email" placeholder="Usuario"  value="{{ old('email', $user->email) }}">
-        </div>
+                    <label for="email">Correo electrónico<span class="primary-color-text">*</span></label>
+                    <input type="text" id="email" name="email" placeholder="Usuario"
+                        @error('email') aria-describedby="error-email" @enderror value="{{ old('email', $user->email) }}">
+                    @error('email')
+                        <p class="text-danger" id="error-email">{{ $message }}</p>
+                    @enderror
+                </div>
 
         <input type="submit" value="Editar" class="main-cta mt-32">
 

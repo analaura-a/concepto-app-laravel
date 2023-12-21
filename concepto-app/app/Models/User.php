@@ -64,4 +64,13 @@ class User extends Authenticatable
         'password.min' => 'La contraseña debe tener al menos :min caracteres.',
     ];
 
+    public const CREATE_RULES_EDIT = [
+        'email' => 'required|email',
+    ];
+
+    public const CREATE_MESSAGES_EDIT = [
+        'email.required' => 'El email no puede estar vacío.',
+        'email.email' => 'Por favor ingresa un formato de correo electrónico válido.',
+    ];
+
 }
