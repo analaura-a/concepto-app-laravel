@@ -37,11 +37,7 @@
                     <a class="anchor-detail" href="<?= route('web.courses.detail', ['id' => $course->course_id]) ?>"
                         target="_blank">
                         <div class="card-img">
-                            @if (Str::of($course->cover)->startsWith('https'))
-                                <img src="{{ $course->cover }}" alt="{{ $course->name }}">
-                            @else
-                                <img src="{{ asset('storage/' . $course->cover) }}" alt="{{ $course->name }}">
-                            @endif
+                            <img src="<?= url('assets/' . $course->cover) ?>" alt="{{ $course->name }}">
                         </div>
                         <div class="card-content">
                             <h3 class="h3 mb-4">{{ $course->name }}</h3>

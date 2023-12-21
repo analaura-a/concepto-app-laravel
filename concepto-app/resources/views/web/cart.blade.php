@@ -41,7 +41,8 @@ if (empty($cart)) {
 
                             @foreach (session('cart') as $item)
                                 <li>
-                                    <img class="cart-card-img" src="{{ $item['cover'] }}" alt="{{ $item['name'] }}">
+                                    <img class="cart-card-img" src="<?= url('assets/' . $item['cover']) ?>"
+                                        alt="{{ $item['name'] }}">
                                     <div class="cart-card-info">
                                         <div>
                                             <h2>{{ $item['name'] }}</h2>

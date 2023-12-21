@@ -35,13 +35,10 @@
             <ul class="container-cards" id="container-courses">
                 @foreach ($courses as $course)
                     <li class="course-card">
-                        <a class="anchor-detail" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank">
+                        <a class="anchor-detail" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
+                            target="_blank">
                             <div class="card-img">
-                                @if (Str::of($course->cover)->startsWith('https'))
-                                    <img src="{{ $course->cover }}" alt="{{ $course->name }}">
-                                @else
-                                    <img src="{{ asset('storage/' . $course->cover) }}" alt="{{ $course->name }}">
-                                @endif
+                                <img src="<?= url('assets/' . $course->cover) ?>" alt="{{ $course->name }}">
                             </div>
                             <div class="card-content">
                                 {{-- <p class="card-content-category mb-8">{{ $course->category->name }}</p> --}}
